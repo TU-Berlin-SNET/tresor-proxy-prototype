@@ -1,0 +1,200 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.cloudtresor</groupId>
+  <artifactId>proxy.parent</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  <name>proxy.parent</name>
+  
+  <dependencyManagement>
+  	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.1.1.RELEASE</version>
+		</dependency>
+  		<dependency>
+  			<groupId>org.eclipse.gemini.blueprint</groupId>
+			<artifactId>gemini-blueprint-core</artifactId>
+			<version>1.0.0.RELEASE</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  
+  <repositories>
+		<repository>
+		    <id>com.springsource.repository.bundles.snapshot</id>
+		    <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Snapshot</name>
+			<url>http://repository.springsource.com/maven/bundles/snapshot</url>
+			<snapshots>
+		    	<enabled>true</enabled>
+		    </snapshots>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.bundles.release</id>
+		    <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundle.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundle.milestone</id>
+		    <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Milestones</name>
+			<url>http://repository.springsource.com/maven/bundles/milestone</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.libraries.release</id>
+		    <name>SpringSource Enterprise Bundle Repository - SpringSource Library Releases</name>
+		    <url>http://repository.springsource.com/maven/libraries/release</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.libraries.external</id>
+		    <name>SpringSource Enterprise Bundle Repository - External Library Releases</name>
+		    <url>http://repository.springsource.com/maven/libraries/external</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.libraries.milestone</id>
+		    <name>SpringSource Enterprise Bundle Repository - Milestone Library Releases</name>
+		    <url>http://repository.springsource.com/maven/libraries/milestone</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.libraries.snapshot</id>
+		    <name>SpringSource Enterprise Bundle Repository - Snapshot Library Releases</name>
+		    <url>http://repository.springsource.com/maven/libraries/snapshot</url>
+		    <snapshots>
+		    	<enabled>true</enabled>
+		    </snapshots>
+		</repository>
+		<repository>
+			<id>zodiac-repository</id>
+			<name>Zodiac Milestone Repository</name>
+			<url>http://zodiac.springsource.com/maven/bundles/milestone</url>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>com.springsource.repository.bundle.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>build.eclipse.org.rt.virgo.maven.bundles.milestone</id>
+			<url>http://build.eclipse.org/rt/virgo/maven/bundles/milestone</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>build.eclipse.org.rt.virgo.maven.bundles.release</id>
+			<url>http://build.eclipse.org/rt/virgo/maven/bundles/release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>build.eclipse.org.rt.virgo.maven.bundles.snapshot</id>
+			<url>http://build.eclipse.org/rt/virgo/maven/bundles/snapshot</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.virgo.bundlor</groupId>
+				<artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
+				<version>1.1.0.M05</version>
+				<executions>
+					<execution>
+						<id>bundlor</id>
+						<goals>
+							<goal>bundlor</goal>
+						</goals>
+						<!-- <phase>package</phase> -->
+					</execution>
+				</executions>
+				<configuration>
+					<outputPath>${basedir}/src/main/resources</outputPath>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<archive>
+						<manifestFile>
+							src/main/resources/META-INF/MANIFEST.MF
+						</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12</version>
+				<configuration>
+					<includes>
+						<include>**/*Tests.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/Abstract*.java</exclude>
+					</excludes>
+					<junitArtifactName>org.junit:com.springsource.org.junit</junitArtifactName>
+					<argLine>-javaagent:${user.home}/.m2/repository/org/springframework/org.springframework.instrument/3.0.5.RELEASE/org.springframework.instrument-3.0.5.RELEASE.jar</argLine>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.eclipse.virgo.bundlor
+										</groupId>
+										<artifactId>
+											org.eclipse.virgo.bundlor.maven
+										</artifactId>
+										<versionRange>
+											[1.1.0.M05,)
+										</versionRange>
+										<goals>
+											<goal>bundlor</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<modules>
+		<module>proxy.core</module>
+		<module>proxy.admin</module>
+		<module>proxy.model</module>
+	</modules>
+</project>
