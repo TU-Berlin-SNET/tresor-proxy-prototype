@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Export-Package: de.cloudtresor.proxy.admin;version="0.0.1";uses:="org.
+ springframework.beans.factory.annotation,org.springframework.stereoty
+ pe,org.springframework.web.bind.annotation"
+Built-By: Mathias Slawik
+Tool: Bundlor 1.1.0.M05
+Import-Library: org.springframework.spring;version="[3.0, 3.5)"
+Bundle-Name: TRESOR Cloud Proxy Admin Interface
+Created-By: Maven Integration for Eclipse
+Web-ContextPath: tresoradmin
+Import-Bundle: com.springsource.org.apache.taglibs.standard;version="[
+ 1.1.2,2.0)"
+Bundle-Version: 0.0.1
+Build-Jdk: 1.6.0_31
+Spring-Context: WEB-INF/applicationContext.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: proxy.admin
+Import-Package: de.cloudtresor.proxy,freemarker.cache;version="[2.3.18
+ ,2.3.18]",javax.servlet;version="[3.0.0, 3.1.0)",javax.servlet.jsp.js
+ tl.core;version="[1.2.0, 2.0.0)",org.eclipse.virgo.web.dm;version="[3
+ .0.0, 4.0.0)",org.springframework.beans.factory.annotation;version="[
+ 3.0, 3.5)",org.springframework.stereotype;version="[3.0, 3.5)",org.sp
+ ringframework.web.bind.annotation;version="[3.0, 3.5)",org.springfram
+ ework.web.servlet.mvc.annotation;version="[3.0, 3.5)"
+

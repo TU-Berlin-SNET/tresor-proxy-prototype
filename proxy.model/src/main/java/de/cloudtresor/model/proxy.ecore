@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="proxy"
+    nsURI="http://www.cloud-tresor.de/model/proxy" nsPrefix="cloudtresorproxy">
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifiableElement" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Proxy">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
+        eType="#//Service" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configurationItems" upperBound="-1"
+        eType="#//ConfigurationItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//IdentifiableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationItem" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="URL" instanceClassName="java.net.URL"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Certificate" instanceClassName="java.security.cert.Certificate"/>
+  <eSubpackages name="endpoint" nsURI="http://www.cloud-tresor.de/model/proxy/endpoint"
+      nsPrefix="proxyEndpoint">
+    <eClassifiers xsi:type="ecore:EClass" name="LocalHTTPEndpoint" eSuperTypes="#//ConfigurationItem #//endpoint/EndpointConfiguration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LocalSSLEndpoint">
+      <eGenericSuperTypes eClassifier="#//endpoint/LocalHTTPEndpoint"/>
+      <eGenericSuperTypes eClassifier="#//endpoint/SecureEndpoint">
+        <eTypeArguments eClassifier="#//endpoint/ClientSSLConfiguration"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LocalTSTPEndpoint">
+      <eGenericSuperTypes eClassifier="#//endpoint/LocalSSLEndpoint"/>
+      <eGenericSuperTypes eClassifier="#//endpoint/TSTPEndpoint">
+        <eTypeArguments eClassifier="#//endpoint/ClientSSLConfiguration"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RemoteHTTPEndpoint" eSuperTypes="#//ConfigurationItem #//endpoint/EndpointConfiguration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RemoteSSLEndpoint">
+      <eGenericSuperTypes eClassifier="#//endpoint/RemoteHTTPEndpoint"/>
+      <eGenericSuperTypes eClassifier="#//endpoint/SecureEndpoint">
+        <eTypeArguments eClassifier="#//endpoint/ServerSSLConfiguration"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RemoteTSTPEndpoint">
+      <eGenericSuperTypes eClassifier="#//endpoint/LocalSSLEndpoint"/>
+      <eGenericSuperTypes eClassifier="#//endpoint/TSTPEndpoint">
+        <eTypeArguments eClassifier="#//endpoint/ServerSSLConfiguration"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EndpointConfiguration" abstract="true"
+        interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="#//URL"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SecureEndpoint" abstract="true" interface="true">
+      <eTypeParameters name="C">
+        <eBounds eClassifier="#//endpoint/SSLConfiguration"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sslConfiguration" lowerBound="1">
+        <eGenericType eTypeParameter="#//endpoint/SecureEndpoint/C"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TSTPEndpoint" abstract="true" interface="true">
+      <eTypeParameters name="C">
+        <eBounds eClassifier="#//endpoint/SSLConfiguration"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tstpConfiguration" lowerBound="1">
+        <eGenericType eTypeParameter="#//endpoint/TSTPEndpoint/C"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SSLConfiguration" abstract="true"
+        interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ClientSSLConfiguration" eSuperTypes="#//endpoint/SSLConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptedServerCertificates"
+          upperBound="-1" eType="#//Certificate"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="clientCertificate" eType="#//Certificate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ServerSSLConfiguration" eSuperTypes="#//endpoint/SSLConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverCertificate" lowerBound="1"
+          eType="#//Certificate"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptedClientCertificates"
+          upperBound="-1" eType="#//Certificate"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/proxy.model/src"
+    modelPluginID="proxy.model" modelName="Proxy" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" classNamePattern="">
+  <foreignModel>proxy.ecore</foreignModel>
+  <genPackages prefix="Proxy" basePackage="de.cloudtresor.model" disposableProviderFactory="true"
+      ecorePackage="proxy.ecore#/">
+    <genDataTypes ecoreDataType="proxy.ecore#//URL"/>
+    <genDataTypes ecoreDataType="proxy.ecore#//Certificate"/>
+    <genClasses image="false" ecoreClass="proxy.ecore#//IdentifiableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//IdentifiableElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="proxy.ecore#//Proxy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proxy.ecore#//Proxy/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proxy.ecore#//Proxy/configurationItems"/>
+    </genClasses>
+    <genClasses ecoreClass="proxy.ecore#//Service"/>
+    <genClasses image="false" ecoreClass="proxy.ecore#//ConfigurationItem"/>
+    <nestedGenPackages prefix="Endpoint" disposableProviderFactory="true" ecorePackage="proxy.ecore#//endpoint">
+      <genClasses ecoreClass="proxy.ecore#//endpoint/LocalHTTPEndpoint"/>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/LocalSSLEndpoint"/>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/LocalTSTPEndpoint"/>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/RemoteHTTPEndpoint"/>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/RemoteSSLEndpoint"/>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/RemoteTSTPEndpoint"/>
+      <genClasses image="false" ecoreClass="proxy.ecore#//endpoint/EndpointConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//endpoint/EndpointConfiguration/url"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="proxy.ecore#//endpoint/SecureEndpoint">
+        <genTypeParameters ecoreTypeParameter="proxy.ecore#//endpoint/SecureEndpoint/C"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference proxy.ecore#//endpoint/SecureEndpoint/sslConfiguration"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="proxy.ecore#//endpoint/TSTPEndpoint">
+        <genTypeParameters ecoreTypeParameter="proxy.ecore#//endpoint/TSTPEndpoint/C"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference proxy.ecore#//endpoint/TSTPEndpoint/tstpConfiguration"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="proxy.ecore#//endpoint/SSLConfiguration"/>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/ClientSSLConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//endpoint/ClientSSLConfiguration/acceptedServerCertificates"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//endpoint/ClientSSLConfiguration/clientCertificate"/>
+      </genClasses>
+      <genClasses ecoreClass="proxy.ecore#//endpoint/ServerSSLConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//endpoint/ServerSSLConfiguration/serverCertificate"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//endpoint/ServerSSLConfiguration/acceptedClientCertificates"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

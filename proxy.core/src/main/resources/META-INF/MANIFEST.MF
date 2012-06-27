@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Export-Package: de.cloudtresor.proxy;version="0.0.1",de.cloudtresor.pr
+ oxy.internal;version="0.0.1";uses:="de.cloudtresor.proxy"
+Bundle-Vendor: TRESOR
+Build-Jdk: 1.6.0_31
+Built-By: Mathias Slawik
+Bundle-Version: 0.0.1
+Tool: Bundlor 1.1.0.M05
+Bundle-Name: TRESOR Cloud Proxy Services
+Spring-Context: config/context.xml
+Bundle-ManifestVersion: 2
+Created-By: Maven Integration for Eclipse
+Bundle-SymbolicName: proxy.core
+
