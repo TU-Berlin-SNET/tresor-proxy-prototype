@@ -12,22 +12,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Proxy</b></em>'.
+ * A representation of the model object '<em><b>Configuration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.cloudtresor.model.proxy.Proxy#getServices <em>Services</em>}</li>
- *   <li>{@link de.cloudtresor.model.proxy.Proxy#getConfigurationItems <em>Configuration Items</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.ProxyConfiguration#getServices <em>Services</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.ProxyConfiguration#getConfigurationItems <em>Configuration Items</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.cloudtresor.model.proxy.ProxyPackage#getProxy()
+ * @see de.cloudtresor.model.proxy.ProxyPackage#getProxyConfiguration()
  * @model
  * @generated
  */
-public interface Proxy extends EObject {
+public interface ProxyConfiguration extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
 	 * The list contents are of type {@link de.cloudtresor.model.proxy.Service}.
@@ -38,7 +38,7 @@ public interface Proxy extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Services</em>' containment reference list.
-	 * @see de.cloudtresor.model.proxy.ProxyPackage#getProxy_Services()
+	 * @see de.cloudtresor.model.proxy.ProxyPackage#getProxyConfiguration_Services()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -54,10 +54,10 @@ public interface Proxy extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Configuration Items</em>' containment reference list.
-	 * @see de.cloudtresor.model.proxy.ProxyPackage#getProxy_ConfigurationItems()
+	 * @see de.cloudtresor.model.proxy.ProxyPackage#getProxyConfiguration_ConfigurationItems()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ConfigurationItem> getConfigurationItems();
 
-} // Proxy
+} // ProxyConfiguration

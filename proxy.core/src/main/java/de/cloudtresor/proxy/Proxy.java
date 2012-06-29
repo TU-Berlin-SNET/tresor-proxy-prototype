@@ -1,5 +1,7 @@
 package de.cloudtresor.proxy;
 
+import de.cloudtresor.model.proxy.ProxyConfiguration;
+
 public interface Proxy {
-	public void shutDown();
+	public ProxyConfiguration getProxyConfiguration();
 }

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-Vendor: TRESOR
+Bundle-ActivationPolicy: lazy
+Build-Jdk: 1.6.0_31
+Built-By: Mathias Slawik
+Bundle-Version: 0.0.1
+Tool: Bundlor 1.1.0.M05
+Bundle-Name: TRESOR Cloud Web-Interface
+Bundle-ManifestVersion: 2
+Created-By: Maven Integration for Eclipse
+Bundle-SymbolicName: proxy.web
+Web-ContextPath: /
+

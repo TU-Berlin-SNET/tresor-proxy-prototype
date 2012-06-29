@@ -26,13 +26,13 @@ public interface ProxyFactory extends EFactory {
 	ProxyFactory eINSTANCE = de.cloudtresor.model.proxy.impl.ProxyFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Proxy</em>'.
+	 * Returns a new object of class '<em>Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Proxy</em>'.
+	 * @return a new object of class '<em>Configuration</em>'.
 	 * @generated
 	 */
-	Proxy createProxy();
+	ProxyConfiguration createProxyConfiguration();
 
 	/**
 	 * Returns a new object of class '<em>Service</em>'.

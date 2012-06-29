@@ -7,7 +7,7 @@
 package de.cloudtresor.model.proxy.impl;
 
 import de.cloudtresor.model.proxy.ConfigurationItem;
-import de.cloudtresor.model.proxy.Proxy;
+import de.cloudtresor.model.proxy.ProxyConfiguration;
 import de.cloudtresor.model.proxy.ProxyPackage;
 import de.cloudtresor.model.proxy.Service;
 
@@ -27,19 +27,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Proxy</b></em>'.
+ * An implementation of the model object '<em><b>Configuration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.cloudtresor.model.proxy.impl.ProxyImpl#getServices <em>Services</em>}</li>
- *   <li>{@link de.cloudtresor.model.proxy.impl.ProxyImpl#getConfigurationItems <em>Configuration Items</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.impl.ProxyConfigurationImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.impl.ProxyConfigurationImpl#getConfigurationItems <em>Configuration Items</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProxyImpl extends EObjectImpl implements Proxy {
+public class ProxyConfigurationImpl extends EObjectImpl implements ProxyConfiguration {
 	/**
 	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProxyImpl() {
+	protected ProxyConfigurationImpl() {
 		super();
 	}
 
@@ -76,7 +76,7 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ProxyPackage.Literals.PROXY;
+		return ProxyPackage.Literals.PROXY_CONFIGURATION;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	 */
 	public EList<Service> getServices() {
 		if (services == null) {
-			services = new EObjectContainmentEList<Service>(Service.class, this, ProxyPackage.PROXY__SERVICES);
+			services = new EObjectContainmentEList<Service>(Service.class, this, ProxyPackage.PROXY_CONFIGURATION__SERVICES);
 		}
 		return services;
 	}
@@ -98,7 +98,7 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	 */
 	public EList<ConfigurationItem> getConfigurationItems() {
 		if (configurationItems == null) {
-			configurationItems = new EObjectContainmentEList<ConfigurationItem>(ConfigurationItem.class, this, ProxyPackage.PROXY__CONFIGURATION_ITEMS);
+			configurationItems = new EObjectContainmentEList<ConfigurationItem>(ConfigurationItem.class, this, ProxyPackage.PROXY_CONFIGURATION__CONFIGURATION_ITEMS);
 		}
 		return configurationItems;
 	}
@@ -111,9 +111,9 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProxyPackage.PROXY__SERVICES:
+			case ProxyPackage.PROXY_CONFIGURATION__SERVICES:
 				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
-			case ProxyPackage.PROXY__CONFIGURATION_ITEMS:
+			case ProxyPackage.PROXY_CONFIGURATION__CONFIGURATION_ITEMS:
 				return ((InternalEList<?>)getConfigurationItems()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -127,9 +127,9 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProxyPackage.PROXY__SERVICES:
+			case ProxyPackage.PROXY_CONFIGURATION__SERVICES:
 				return getServices();
-			case ProxyPackage.PROXY__CONFIGURATION_ITEMS:
+			case ProxyPackage.PROXY_CONFIGURATION__CONFIGURATION_ITEMS:
 				return getConfigurationItems();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -144,11 +144,11 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProxyPackage.PROXY__SERVICES:
+			case ProxyPackage.PROXY_CONFIGURATION__SERVICES:
 				getServices().clear();
 				getServices().addAll((Collection<? extends Service>)newValue);
 				return;
-			case ProxyPackage.PROXY__CONFIGURATION_ITEMS:
+			case ProxyPackage.PROXY_CONFIGURATION__CONFIGURATION_ITEMS:
 				getConfigurationItems().clear();
 				getConfigurationItems().addAll((Collection<? extends ConfigurationItem>)newValue);
 				return;
@@ -164,10 +164,10 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProxyPackage.PROXY__SERVICES:
+			case ProxyPackage.PROXY_CONFIGURATION__SERVICES:
 				getServices().clear();
 				return;
-			case ProxyPackage.PROXY__CONFIGURATION_ITEMS:
+			case ProxyPackage.PROXY_CONFIGURATION__CONFIGURATION_ITEMS:
 				getConfigurationItems().clear();
 				return;
 		}
@@ -182,12 +182,12 @@ public class ProxyImpl extends EObjectImpl implements Proxy {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProxyPackage.PROXY__SERVICES:
+			case ProxyPackage.PROXY_CONFIGURATION__SERVICES:
 				return services != null && !services.isEmpty();
-			case ProxyPackage.PROXY__CONFIGURATION_ITEMS:
+			case ProxyPackage.PROXY_CONFIGURATION__CONFIGURATION_ITEMS:
 				return configurationItems != null && !configurationItems.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ProxyImpl
+} //ProxyConfigurationImpl

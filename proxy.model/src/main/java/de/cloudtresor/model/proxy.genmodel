@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/proxy.model/src"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/proxy.model/src/main/java"
     modelPluginID="proxy.model" modelName="Proxy" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" classNamePattern="">
   <foreignModel>proxy.ecore</foreignModel>
@@ -12,9 +12,9 @@
     <genClasses image="false" ecoreClass="proxy.ecore#//IdentifiableElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//IdentifiableElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="proxy.ecore#//Proxy">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proxy.ecore#//Proxy/services"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proxy.ecore#//Proxy/configurationItems"/>
+    <genClasses ecoreClass="proxy.ecore#//ProxyConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proxy.ecore#//ProxyConfiguration/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference proxy.ecore#//ProxyConfiguration/configurationItems"/>
     </genClasses>
     <genClasses ecoreClass="proxy.ecore#//Service"/>
     <genClasses image="false" ecoreClass="proxy.ecore#//ConfigurationItem"/>

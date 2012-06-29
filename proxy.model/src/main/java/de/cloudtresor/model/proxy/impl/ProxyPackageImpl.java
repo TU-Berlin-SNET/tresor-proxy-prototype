@@ -8,7 +8,7 @@ package de.cloudtresor.model.proxy.impl;
 
 import de.cloudtresor.model.proxy.ConfigurationItem;
 import de.cloudtresor.model.proxy.IdentifiableElement;
-import de.cloudtresor.model.proxy.Proxy;
+import de.cloudtresor.model.proxy.ProxyConfiguration;
 import de.cloudtresor.model.proxy.ProxyFactory;
 import de.cloudtresor.model.proxy.ProxyPackage;
 import de.cloudtresor.model.proxy.Service;
@@ -46,7 +46,7 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass proxyEClass = null;
+	private EClass proxyConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,8 +165,8 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProxy() {
-		return proxyEClass;
+	public EClass getProxyConfiguration() {
+		return proxyConfigurationEClass;
 	}
 
 	/**
@@ -174,8 +174,8 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProxy_Services() {
-		return (EReference)proxyEClass.getEStructuralFeatures().get(0);
+	public EReference getProxyConfiguration_Services() {
+		return (EReference)proxyConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -183,8 +183,8 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProxy_ConfigurationItems() {
-		return (EReference)proxyEClass.getEStructuralFeatures().get(1);
+	public EReference getProxyConfiguration_ConfigurationItems() {
+		return (EReference)proxyConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -254,9 +254,9 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 		identifiableElementEClass = createEClass(IDENTIFIABLE_ELEMENT);
 		createEAttribute(identifiableElementEClass, IDENTIFIABLE_ELEMENT__NAME);
 
-		proxyEClass = createEClass(PROXY);
-		createEReference(proxyEClass, PROXY__SERVICES);
-		createEReference(proxyEClass, PROXY__CONFIGURATION_ITEMS);
+		proxyConfigurationEClass = createEClass(PROXY_CONFIGURATION);
+		createEReference(proxyConfigurationEClass, PROXY_CONFIGURATION__SERVICES);
+		createEReference(proxyConfigurationEClass, PROXY_CONFIGURATION__CONFIGURATION_ITEMS);
 
 		serviceEClass = createEClass(SERVICE);
 
@@ -307,9 +307,9 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 		initEClass(identifiableElementEClass, IdentifiableElement.class, "IdentifiableElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIdentifiableElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, IdentifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(proxyEClass, Proxy.class, "Proxy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProxy_Services(), this.getService(), null, "services", null, 0, -1, Proxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProxy_ConfigurationItems(), this.getConfigurationItem(), null, "configurationItems", null, 0, -1, Proxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(proxyConfigurationEClass, ProxyConfiguration.class, "ProxyConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProxyConfiguration_Services(), this.getService(), null, "services", null, 0, -1, ProxyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProxyConfiguration_ConfigurationItems(), this.getConfigurationItem(), null, "configurationItems", null, 0, -1, ProxyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

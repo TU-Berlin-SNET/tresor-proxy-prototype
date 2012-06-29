@@ -65,7 +65,7 @@ public class ProxyFactoryImpl extends EFactoryImpl implements ProxyFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ProxyPackage.PROXY: return createProxy();
+			case ProxyPackage.PROXY_CONFIGURATION: return createProxyConfiguration();
 			case ProxyPackage.SERVICE: return createService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -111,9 +111,9 @@ public class ProxyFactoryImpl extends EFactoryImpl implements ProxyFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Proxy createProxy() {
-		ProxyImpl proxy = new ProxyImpl();
-		return proxy;
+	public ProxyConfiguration createProxyConfiguration() {
+		ProxyConfigurationImpl proxyConfiguration = new ProxyConfigurationImpl();
+		return proxyConfiguration;
 	}
 
 	/**

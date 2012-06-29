@@ -7,7 +7,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
 		http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 	
-	<!-- import a proxy service-->
 	<osgi:reference id="proxy" interface="de.cloudtresor.proxy.Proxy" />
 
 </beans>

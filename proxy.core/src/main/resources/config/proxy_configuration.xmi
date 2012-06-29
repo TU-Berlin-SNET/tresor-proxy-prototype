@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cloudtresorproxy:ProxyConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cloudtresorproxy="http://www.cloud-tresor.de/model/proxy" xmlns:proxyEndpoint="http://www.cloud-tresor.de/model/proxy/endpoint" xsi:schemaLocation="http://www.cloud-tresor.de/model/proxy ../../../../../proxy.model/src/main/java/de/cloudtresor/model/proxy.ecore http://www.cloud-tresor.de/model/proxy/endpoint ../../../../../proxy.model/src/main/java/de/cloudtresor/model/proxy.ecore#//endpoint">
+  <services name="demo"/>
+  <configurationItems xsi:type="proxyEndpoint:LocalHTTPEndpoint" url="http://clientproxy.local" service="demo"/>
+  <configurationItems xsi:type="proxyEndpoint:RemoteHTTPEndpoint" url="http://tresorproxy.local" service="demo"/>
+</cloudtresorproxy:ProxyConfiguration>
