@@ -145,13 +145,41 @@ public interface ProxyPackage extends EPackage {
 	int SERVICE__NAME = IDENTIFIABLE_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Service Configuration Item</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__SERVICE_CONFIGURATION_ITEM = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE_FEATURE_COUNT = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.ServiceConfigurationItem
+	 * @see de.cloudtresor.model.proxy.impl.ProxyPackageImpl#getServiceConfigurationItem()
+	 * @generated
+	 */
+	int SERVICE_CONFIGURATION_ITEM = 3;
+
+	/**
+	 * The number of structural features of the '<em>Service Configuration Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_CONFIGURATION_ITEM_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.cloudtresor.model.proxy.ConfigurationItem <em>Configuration Item</em>}' class.
@@ -161,7 +189,7 @@ public interface ProxyPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.impl.ProxyPackageImpl#getConfigurationItem()
 	 * @generated
 	 */
-	int CONFIGURATION_ITEM = 3;
+	int CONFIGURATION_ITEM = 4;
 
 	/**
 	 * The number of structural features of the '<em>Configuration Item</em>' class.
@@ -180,7 +208,7 @@ public interface ProxyPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.impl.ProxyPackageImpl#getURL()
 	 * @generated
 	 */
-	int URL = 4;
+	int URL = 5;
 
 	/**
 	 * The meta object id for the '<em>Certificate</em>' data type.
@@ -190,7 +218,7 @@ public interface ProxyPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.impl.ProxyPackageImpl#getCertificate()
 	 * @generated
 	 */
-	int CERTIFICATE = 5;
+	int CERTIFICATE = 6;
 
 
 	/**
@@ -255,6 +283,27 @@ public interface ProxyPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getService();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.cloudtresor.model.proxy.Service#getServiceConfigurationItem <em>Service Configuration Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Service Configuration Item</em>'.
+	 * @see de.cloudtresor.model.proxy.Service#getServiceConfigurationItem()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_ServiceConfigurationItem();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Configuration Item</em>'.
+	 * @see de.cloudtresor.model.proxy.ServiceConfigurationItem
+	 * @generated
+	 */
+	EClass getServiceConfigurationItem();
 
 	/**
 	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.ConfigurationItem <em>Configuration Item</em>}'.
@@ -363,6 +412,24 @@ public interface ProxyPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE = eINSTANCE.getService();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Configuration Item</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__SERVICE_CONFIGURATION_ITEM = eINSTANCE.getService_ServiceConfigurationItem();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.ServiceConfigurationItem
+		 * @see de.cloudtresor.model.proxy.impl.ProxyPackageImpl#getServiceConfigurationItem()
+		 * @generated
+		 */
+		EClass SERVICE_CONFIGURATION_ITEM = eINSTANCE.getServiceConfigurationItem();
 
 		/**
 		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.ConfigurationItem <em>Configuration Item</em>}' class.

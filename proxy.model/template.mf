@@ -1,15 +1,17 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TRESOR Cloud Proxy Model
-Bundle-SymbolicName: proxy.model
+Bundle-SymbolicName: de.cloudtresor.proxy.model
 Bundle-Vendor: TRESOR
 Bundle-Version: 0.0.1
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.emf.common,
-    org.eclipse.emf.ecore
+    org.eclipse.emf.ecore,
+    org.eclipse.emf.ecore.xmi
 Export-Package: de.cloudtresor.model.proxy,
     de.cloudtresor.model.proxy.endpoint
 Excluded-Exports: de.cloudtresor.model.proxy.impl,
     de.cloudtresor.model.proxy.util,
     de.cloudtresor.model.proxy.endpoint.util,
     de.cloudtresor.model.proxy.endpoint.impl
+Spring-Context: config/context.xml

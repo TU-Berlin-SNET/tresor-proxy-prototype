@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plan name="org.glassfish.grizzly" version="0.0.1" scoped="false" atomic="true" xmlns="http://www.eclipse.org/virgo/schema/plan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+		        http://www.eclipse.org/virgo/schema/plan 
+		        http://www.eclipse.org/virgo/schema/plan/eclipse-virgo-plan.xsd">
+
+	<artifact type="bundle" name="gmbal-api-only" version="[3.0.0, 4.0.0)"/>
+	
+	<artifact type="bundle" name="org.glassfish.grizzly.grizzly-comet" version="[2.0.0,3.0.0)"/>
+	<artifact type="bundle" name="org.glassfish.grizzly.grizzly-framework" version="[2.0.0,3.0.0)"/>
+	<artifact type="bundle" name="org.glassfish.grizzly.http" version="[2.0.0,3.0.0)"/>
+	<artifact type="bundle" name="org.glassfish.grizzly.http-server" version="[2.0.0,3.0.0)"/>
+	<!-- <artifact type="bundle" name="org.glassfish.grizzly.osgi.grizzly-httpservice" version="[2.0.0,3.0.0)"/>  -->
+	<!-- <artifact type="bundle" name="org.glassfish.grizzly.osgi.grizzly-httpservice-bundle" version="[2.0.0,3.0.0)"/> -->
+	<artifact type="bundle" name="org.glassfish.grizzly.http-servlet" version="[2.0.0,3.0.0)"/>
+	<artifact type="bundle" name="org.glassfish.grizzly.portunif" version="[2.0.0,3.0.0)"/>
+	<artifact type="bundle" name="org.glassfish.grizzly.rcm" version="[2.0.0,3.0.0)"/>
+	<artifact type="bundle" name="org.glassfish.grizzly.websockets" version="[2.0.0,3.0.0)"/>
+</plan>

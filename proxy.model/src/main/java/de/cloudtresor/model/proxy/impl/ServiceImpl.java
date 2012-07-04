@@ -8,13 +8,23 @@ package de.cloudtresor.model.proxy.impl;
 
 import de.cloudtresor.model.proxy.ProxyPackage;
 import de.cloudtresor.model.proxy.Service;
+import de.cloudtresor.model.proxy.ServiceConfigurationItem;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +34,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.cloudtresor.model.proxy.impl.ServiceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.impl.ServiceImpl#getServiceConfigurationItem <em>Service Configuration Item</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +60,16 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getServiceConfigurationItem() <em>Service Configuration Item</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServiceConfigurationItem()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ServiceConfigurationItem> serviceConfigurationItem;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,11 +116,39 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ServiceConfigurationItem> getServiceConfigurationItem() {
+		if (serviceConfigurationItem == null) {
+			serviceConfigurationItem = new EObjectContainmentEList<ServiceConfigurationItem>(ServiceConfigurationItem.class, this, ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM);
+		}
+		return serviceConfigurationItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
+				return ((InternalEList<?>)getServiceConfigurationItem()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ProxyPackage.SERVICE__NAME:
 				return getName();
+			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
+				return getServiceConfigurationItem();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,11 +158,16 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ProxyPackage.SERVICE__NAME:
 				setName((String)newValue);
+				return;
+			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
+				getServiceConfigurationItem().clear();
+				getServiceConfigurationItem().addAll((Collection<? extends ServiceConfigurationItem>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,6 +184,9 @@ public class ServiceImpl extends EObjectImpl implements Service {
 			case ProxyPackage.SERVICE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
+				getServiceConfigurationItem().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -144,6 +201,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 		switch (featureID) {
 			case ProxyPackage.SERVICE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
+				return serviceConfigurationItem != null && !serviceConfigurationItem.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

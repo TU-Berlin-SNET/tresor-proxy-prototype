@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: de.cloudtresor.proxy.web.information;version="0.0.1";u
+ ses:="de.cloudtresor.model.proxy,org.springframework.beans.factory.an
+ notation,org.springframework.stereotype,org.springframework.web.bind.
+ annotation"
+Bundle-ActivationPolicy: lazy
+Built-By: Mathias Slawik
+Tool: Bundlor 1.1.0.M05
+Bundle-Name: TRESOR Cloud Web-Interface
+Created-By: Maven Integration for Eclipse
+Web-ContextPath: /tresor
+Bundle-Vendor: TRESOR
+Bundle-Version: 0.0.1
+Build-Jdk: 1.6.0_31
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: proxy.web
+Import-Package: de.cloudtresor.model.proxy,de.cloudtresor.proxy,org.sp
+ ringframework.beans.factory.annotation,org.springframework.stereotype
+ ,org.springframework.web.bind.annotation,org.springframework.web.serv
+ let.mvc.annotation
+

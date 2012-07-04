@@ -194,9 +194,7 @@
 	</build>
 	<modules>
 		<module>../proxy.core</module>
-		<module>../proxy.admin</module>
 		<module>../proxy.model</module>
-		<module>proxy.handler</module>
-		<module>proxy.web</module>
+		<module>../proxy.web</module>
 	</modules>
 </project>

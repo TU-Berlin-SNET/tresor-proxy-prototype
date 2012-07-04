@@ -7,7 +7,14 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-	<bean id="proxy" class="de.cloudtresor.proxy.internal.ProxyImpl"/>
+	<bean id="defaultHandlerFactory" class="de.cloudtresor.proxy.handler.impl.EndpointHandlerFactoryImpl"/>
+
+	<bean id="proxy" class="de.cloudtresor.proxy.internal.ProxyImpl" destroy-method="shutdown">
+		<constructor-arg name="modelUtil" ref="modelUtil"/>
+		<constructor-arg name="factory" ref="defaultHandlerFactory"/>
+	</bean>
 
 	<osgi:service interface="de.cloudtresor.proxy.Proxy" ref="proxy"/>
+	
+	<osgi:reference interface="de.cloudtresor.util.ModelUtil" id="modelUtil"/>
 </beans>

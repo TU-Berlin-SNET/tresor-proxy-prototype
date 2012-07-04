@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TRESOR Cloud Web-Interface
+Bundle-SymbolicName: proxy.web
+Bundle-Vendor: TRESOR
+Bundle-Version: 0.0.1
+Bundle-ActivationPolicy: lazy
+Web-ContextPath: /tresor

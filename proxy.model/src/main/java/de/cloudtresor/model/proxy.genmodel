@@ -2,8 +2,9 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/proxy.model/src/main/java"
-    modelPluginID="proxy.model" modelName="Proxy" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" classNamePattern="">
+    modelPluginID="proxy.model" modelName="Proxy" runtimeCompatibility="true" testsDirectory=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    classNamePattern="">
   <foreignModel>proxy.ecore</foreignModel>
   <genPackages prefix="Proxy" basePackage="de.cloudtresor.model" disposableProviderFactory="true"
       ecorePackage="proxy.ecore#/">
@@ -27,6 +28,8 @@
       <genClasses ecoreClass="proxy.ecore#//endpoint/RemoteTSTPEndpoint"/>
       <genClasses image="false" ecoreClass="proxy.ecore#//endpoint/EndpointConfiguration">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute proxy.ecore#//endpoint/EndpointConfiguration/url"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference proxy.ecore#//endpoint/EndpointConfiguration/service"/>
       </genClasses>
       <genClasses image="false" ecoreClass="proxy.ecore#//endpoint/SecureEndpoint">
         <genTypeParameters ecoreTypeParameter="proxy.ecore#//endpoint/SecureEndpoint/C"/>

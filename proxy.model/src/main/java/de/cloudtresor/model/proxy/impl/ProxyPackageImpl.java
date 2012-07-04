@@ -12,6 +12,11 @@ import de.cloudtresor.model.proxy.ProxyConfiguration;
 import de.cloudtresor.model.proxy.ProxyFactory;
 import de.cloudtresor.model.proxy.ProxyPackage;
 import de.cloudtresor.model.proxy.Service;
+import de.cloudtresor.model.proxy.ServiceConfigurationItem;
+
+import de.cloudtresor.model.proxy.auth.AuthPackage;
+
+import de.cloudtresor.model.proxy.auth.impl.AuthPackageImpl;
 
 import de.cloudtresor.model.proxy.endpoint.EndpointPackage;
 
@@ -54,6 +59,13 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * @generated
 	 */
 	private EClass serviceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceConfigurationItemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,14 +136,17 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 
 		// Obtain or create and register interdependencies
 		EndpointPackageImpl theEndpointPackage = (EndpointPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EndpointPackage.eNS_URI) instanceof EndpointPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EndpointPackage.eNS_URI) : EndpointPackage.eINSTANCE);
+		AuthPackageImpl theAuthPackage = (AuthPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AuthPackage.eNS_URI) instanceof AuthPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AuthPackage.eNS_URI) : AuthPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theProxyPackage.createPackageContents();
 		theEndpointPackage.createPackageContents();
+		theAuthPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theProxyPackage.initializePackageContents();
 		theEndpointPackage.initializePackageContents();
+		theAuthPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theProxyPackage.freeze();
@@ -201,6 +216,24 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getService_ServiceConfigurationItem() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceConfigurationItem() {
+		return serviceConfigurationItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConfigurationItem() {
 		return configurationItemEClass;
 	}
@@ -259,6 +292,9 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 		createEReference(proxyConfigurationEClass, PROXY_CONFIGURATION__CONFIGURATION_ITEMS);
 
 		serviceEClass = createEClass(SERVICE);
+		createEReference(serviceEClass, SERVICE__SERVICE_CONFIGURATION_ITEM);
+
+		serviceConfigurationItemEClass = createEClass(SERVICE_CONFIGURATION_ITEM);
 
 		configurationItemEClass = createEClass(CONFIGURATION_ITEM);
 
@@ -292,9 +328,11 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 
 		// Obtain other dependent packages
 		EndpointPackage theEndpointPackage = (EndpointPackage)EPackage.Registry.INSTANCE.getEPackage(EndpointPackage.eNS_URI);
+		AuthPackage theAuthPackage = (AuthPackage)EPackage.Registry.INSTANCE.getEPackage(AuthPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theEndpointPackage);
+		getESubpackages().add(theAuthPackage);
 
 		// Create type parameters
 
@@ -312,6 +350,9 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 		initEReference(getProxyConfiguration_ConfigurationItems(), this.getConfigurationItem(), null, "configurationItems", null, 0, -1, ProxyConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getService_ServiceConfigurationItem(), this.getServiceConfigurationItem(), null, "serviceConfigurationItem", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceConfigurationItemEClass, ServiceConfigurationItem.class, "ServiceConfigurationItem", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(configurationItemEClass, ConfigurationItem.class, "ConfigurationItem", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

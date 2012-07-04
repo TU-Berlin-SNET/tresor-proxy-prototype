@@ -89,6 +89,12 @@ public class ProxySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ProxyPackage.SERVICE_CONFIGURATION_ITEM: {
+				ServiceConfigurationItem serviceConfigurationItem = (ServiceConfigurationItem)theEObject;
+				T result = caseServiceConfigurationItem(serviceConfigurationItem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ProxyPackage.CONFIGURATION_ITEM: {
 				ConfigurationItem configurationItem = (ConfigurationItem)theEObject;
 				T result = caseConfigurationItem(configurationItem);
@@ -141,6 +147,21 @@ public class ProxySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseService(Service object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Configuration Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Configuration Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceConfigurationItem(ServiceConfigurationItem object) {
 		return null;
 	}
 

@@ -8,6 +8,10 @@ package de.cloudtresor.model.proxy.endpoint.impl;
 
 import de.cloudtresor.model.proxy.ProxyPackage;
 
+import de.cloudtresor.model.proxy.auth.AuthPackage;
+
+import de.cloudtresor.model.proxy.auth.impl.AuthPackageImpl;
+
 import de.cloudtresor.model.proxy.endpoint.ClientSSLConfiguration;
 import de.cloudtresor.model.proxy.endpoint.EndpointConfiguration;
 import de.cloudtresor.model.proxy.endpoint.EndpointFactory;
@@ -173,14 +177,17 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 
 		// Obtain or create and register interdependencies
 		ProxyPackageImpl theProxyPackage = (ProxyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProxyPackage.eNS_URI) instanceof ProxyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProxyPackage.eNS_URI) : ProxyPackage.eINSTANCE);
+		AuthPackageImpl theAuthPackage = (AuthPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AuthPackage.eNS_URI) instanceof AuthPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AuthPackage.eNS_URI) : AuthPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEndpointPackage.createPackageContents();
 		theProxyPackage.createPackageContents();
+		theAuthPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEndpointPackage.initializePackageContents();
 		theProxyPackage.initializePackageContents();
+		theAuthPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theEndpointPackage.freeze();
@@ -198,6 +205,15 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 */
 	public EClass getLocalHTTPEndpoint() {
 		return localHTTPEndpointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLocalHTTPEndpoint_BoundInterfaces() {
+		return (EAttribute)localHTTPEndpointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -261,6 +277,15 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 */
 	public EAttribute getEndpointConfiguration_Url() {
 		return (EAttribute)endpointConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEndpointConfiguration_Service() {
+		return (EReference)endpointConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -391,6 +416,7 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 
 		// Create classes and their features
 		localHTTPEndpointEClass = createEClass(LOCAL_HTTP_ENDPOINT);
+		createEAttribute(localHTTPEndpointEClass, LOCAL_HTTP_ENDPOINT__BOUND_INTERFACES);
 
 		localSSLEndpointEClass = createEClass(LOCAL_SSL_ENDPOINT);
 
@@ -404,6 +430,7 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 
 		endpointConfigurationEClass = createEClass(ENDPOINT_CONFIGURATION);
 		createEAttribute(endpointConfigurationEClass, ENDPOINT_CONFIGURATION__URL);
+		createEReference(endpointConfigurationEClass, ENDPOINT_CONFIGURATION__SERVICE);
 
 		secureEndpointEClass = createEClass(SECURE_ENDPOINT);
 		createEReference(secureEndpointEClass, SECURE_ENDPOINT__SSL_CONFIGURATION);
@@ -492,6 +519,7 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(localHTTPEndpointEClass, LocalHTTPEndpoint.class, "LocalHTTPEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLocalHTTPEndpoint_BoundInterfaces(), ecorePackage.getEString(), "boundInterfaces", null, 0, -1, LocalHTTPEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localSSLEndpointEClass, LocalSSLEndpoint.class, "LocalSSLEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -505,6 +533,7 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 
 		initEClass(endpointConfigurationEClass, EndpointConfiguration.class, "EndpointConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEndpointConfiguration_Url(), theProxyPackage.getURL(), "url", null, 1, 1, EndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndpointConfiguration_Service(), theProxyPackage.getService(), null, "service", null, 1, 1, EndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(secureEndpointEClass, SecureEndpoint.class, "SecureEndpoint", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(secureEndpointEClass_C);

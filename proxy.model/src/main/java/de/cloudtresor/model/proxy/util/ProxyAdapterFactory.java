@@ -84,6 +84,10 @@ public class ProxyAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAdapter();
 			}
 			@Override
+			public Adapter caseServiceConfigurationItem(ServiceConfigurationItem object) {
+				return createServiceConfigurationItemAdapter();
+			}
+			@Override
 			public Adapter caseConfigurationItem(ConfigurationItem object) {
 				return createConfigurationItemAdapter();
 			}
@@ -146,6 +150,20 @@ public class ProxyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.ServiceConfigurationItem
+	 * @generated
+	 */
+	public Adapter createServiceConfigurationItemAdapter() {
 		return null;
 	}
 

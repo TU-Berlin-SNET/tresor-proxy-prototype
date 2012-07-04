@@ -1,20 +1,27 @@
 Manifest-Version: 1.0
 Export-Package: de.cloudtresor.proxy;version="0.0.1";uses:="de.cloudtr
- esor.model.proxy",de.cloudtresor.proxy.internal;version="0.0.1";uses:
- ="de.cloudtresor.model.proxy,de.cloudtresor.proxy"
+ esor.model.proxy",de.cloudtresor.proxy.handler;version="0.0.1";uses:=
+ "de.cloudtresor.model.proxy.endpoint",de.cloudtresor.proxy.handler.im
+ pl;version="0.0.1";uses:="de.cloudtresor.model.proxy.endpoint,de.clou
+ dtresor.proxy.handler",de.cloudtresor.proxy.handler.impl.grizzly;vers
+ ion="0.0.1";uses:="de.cloudtresor.model.proxy.endpoint,org.glassfish.
+ grizzly,org.glassfish.grizzly.http.server",de.cloudtresor.proxy.inter
+ nal;version="0.0.1";uses:="de.cloudtresor.model.proxy,de.cloudtresor.
+ proxy,de.cloudtresor.proxy.handler,de.cloudtresor.util"
 Built-By: Mathias Slawik
 Tool: Bundlor 1.1.0.M05
 Bundle-Name: TRESOR Cloud Proxy Services
 Created-By: Maven Integration for Eclipse
 Require-Bundle: org.eclipse.emf.common,org.eclipse.emf.ecore,org.eclip
- se.emf.ecore.xmi
+ se.emf.ecore.xmi,de.cloudtresor.proxy.model
 Bundle-Vendor: TRESOR
 Bundle-Version: 0.0.1
 Build-Jdk: 1.6.0_31
 Spring-Context: config/context.xml
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: proxy.core
-Import-Package: de.cloudtresor.model.proxy,org.eclipse.emf.common.util
- ,org.eclipse.emf.ecore,org.eclipse.emf.ecore.resource,org.eclipse.emf
- .ecore.resource.impl,org.eclipse.emf.ecore.xmi.impl
+Bundle-SymbolicName: de.cloudtresor.proxy.core
+Import-Package: de.cloudtresor.model.proxy,de.cloudtresor.model.proxy.
+ auth,de.cloudtresor.model.proxy.endpoint,de.cloudtresor.util,org.ecli
+ pse.emf.common.util,org.glassfish.grizzly,org.glassfish.grizzly.http.
+ server,org.glassfish.grizzly.http.server.io
 

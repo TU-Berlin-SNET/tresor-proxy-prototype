@@ -14,13 +14,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurationItems" upperBound="-1"
         eType="#//ConfigurationItem" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//IdentifiableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//IdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceConfigurationItem"
+        upperBound="-1" eType="#//ServiceConfigurationItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceConfigurationItem" abstract="true"
+      interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConfigurationItem" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EDataType" name="URL" instanceClassName="java.net.URL"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Certificate" instanceClassName="java.security.cert.Certificate"/>
   <eSubpackages name="endpoint" nsURI="http://www.cloud-tresor.de/model/proxy/endpoint"
       nsPrefix="proxyEndpoint">
-    <eClassifiers xsi:type="ecore:EClass" name="LocalHTTPEndpoint" eSuperTypes="#//ConfigurationItem #//endpoint/EndpointConfiguration"/>
+    <eClassifiers xsi:type="ecore:EClass" name="LocalHTTPEndpoint" eSuperTypes="#//ConfigurationItem #//endpoint/EndpointConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="boundInterfaces" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="LocalSSLEndpoint">
       <eGenericSuperTypes eClassifier="#//endpoint/LocalHTTPEndpoint"/>
       <eGenericSuperTypes eClassifier="#//endpoint/SecureEndpoint">
@@ -80,6 +88,40 @@
           eType="#//Certificate"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptedClientCertificates"
           upperBound="-1" eType="#//Certificate"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="auth" nsURI="http://www.cloud-tresor.de/model/proxy/auth" nsPrefix="proxyAuth">
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationMethod" abstract="true"
+        interface="true" eSuperTypes="#//ServiceConfigurationItem"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthenticationMethodHtpasswd" eSuperTypes="#//auth/AuthenticationMethod">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthorizationMethod" abstract="true"
+        interface="true" eSuperTypes="#//ServiceConfigurationItem"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthorizationMethodGroupfile" eSuperTypes="#//auth/AuthorizationMethod">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthorizationConfiguration" eSuperTypes="#//ServiceConfigurationItem">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" lowerBound="1"
+          eType="#//auth/AuthorizationState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="authorizationConfigurationItems"
+          upperBound="-1" eType="#//auth/AuthorizationConfigurationItem" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthorizationConfigurationItem" abstract="true"
+        interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthorizationRequireValidUser" eSuperTypes="#//auth/AuthorizationConfigurationItem"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AuthorizationRequireGroup" eSuperTypes="#//auth/AuthorizationConfigurationItem">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupIdentifier" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="AuthorizationState">
+      <eLiterals name="ALLOW"/>
+      <eLiterals name="DENY" value="1" literal="DENY"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

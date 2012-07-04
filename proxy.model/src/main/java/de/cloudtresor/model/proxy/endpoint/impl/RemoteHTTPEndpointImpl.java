@@ -6,6 +6,8 @@
  */
 package de.cloudtresor.model.proxy.endpoint.impl;
 
+import de.cloudtresor.model.proxy.Service;
+
 import de.cloudtresor.model.proxy.endpoint.EndpointConfiguration;
 import de.cloudtresor.model.proxy.endpoint.EndpointPackage;
 import de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpoint;
@@ -15,6 +17,7 @@ import java.net.URL;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointImpl#getUrl <em>Url</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointImpl#getService <em>Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +56,16 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 	 * @ordered
 	 */
 	protected URL url = URL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getService()
+	 * @generated
+	 * @ordered
+	 */
+	protected Service service;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,11 +112,52 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Service getService() {
+		if (service != null && service.eIsProxy()) {
+			InternalEObject oldService = (InternalEObject)service;
+			service = (Service)eResolveProxy(oldService);
+			if (service != oldService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE, oldService, service));
+			}
+		}
+		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetService() {
+		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setService(Service newService) {
+		Service oldService = service;
+		service = newService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE, oldService, service));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EndpointPackage.REMOTE_HTTP_ENDPOINT__URL:
 				return getUrl();
+			case EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE:
+				if (resolve) return getService();
+				return basicGetService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,6 +172,9 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 		switch (featureID) {
 			case EndpointPackage.REMOTE_HTTP_ENDPOINT__URL:
 				setUrl((URL)newValue);
+				return;
+			case EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE:
+				setService((Service)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,6 +191,9 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 			case EndpointPackage.REMOTE_HTTP_ENDPOINT__URL:
 				setUrl(URL_EDEFAULT);
 				return;
+			case EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE:
+				setService((Service)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -147,6 +208,8 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 		switch (featureID) {
 			case EndpointPackage.REMOTE_HTTP_ENDPOINT__URL:
 				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+			case EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE:
+				return service != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -161,6 +224,7 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 		if (baseClass == EndpointConfiguration.class) {
 			switch (derivedFeatureID) {
 				case EndpointPackage.REMOTE_HTTP_ENDPOINT__URL: return EndpointPackage.ENDPOINT_CONFIGURATION__URL;
+				case EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE: return EndpointPackage.ENDPOINT_CONFIGURATION__SERVICE;
 				default: return -1;
 			}
 		}
@@ -177,6 +241,7 @@ public class RemoteHTTPEndpointImpl extends EObjectImpl implements RemoteHTTPEnd
 		if (baseClass == EndpointConfiguration.class) {
 			switch (baseFeatureID) {
 				case EndpointPackage.ENDPOINT_CONFIGURATION__URL: return EndpointPackage.REMOTE_HTTP_ENDPOINT__URL;
+				case EndpointPackage.ENDPOINT_CONFIGURATION__SERVICE: return EndpointPackage.REMOTE_HTTP_ENDPOINT__SERVICE;
 				default: return -1;
 			}
 		}

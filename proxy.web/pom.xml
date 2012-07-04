@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>proxy.parent</artifactId>
+    <groupId>de.cloudtresor</groupId>
+    <version>0.0.1</version>
+    <relativePath>..</relativePath>
+  </parent>
+  
+  <artifactId>proxy.web</artifactId>
+  <name>TRESOR Web-Interface</name>
+  
+  <dependencies>
+		<dependency>
+			<artifactId>proxy-model</artifactId>
+			<groupId>de.cloudtresor</groupId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<artifactId>proxy-core</artifactId>
+			<groupId>de.cloudtresor</groupId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet</artifactId>
+			<version>3.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>org.springframework.spring-library</artifactId>
+		    <version>3.0.5.RELEASE</version>
+			<type>libd</type>
+		</dependency>
+	</dependencies>
+</project>
