@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <cloudtresorproxy:ProxyConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cloudtresorproxy="http://www.cloud-tresor.de/model/proxy" xmlns:proxyAuth="http://www.cloud-tresor.de/model/proxy/auth" xmlns:proxyEndpoint="http://www.cloud-tresor.de/model/proxy/endpoint" xsi:schemaLocation="http://www.cloud-tresor.de/model/proxy ../../../../../proxy.model/src/main/java/de/cloudtresor/model/proxy.ecore http://www.cloud-tresor.de/model/proxy/auth ../../../../../proxy.model/src/main/java/de/cloudtresor/model/proxy.ecore#//auth http://www.cloud-tresor.de/model/proxy/endpoint ../../../../../proxy.model/src/main/java/de/cloudtresor/model/proxy.ecore#//endpoint">
   <services name="demo">
-    <serviceConfigurationItem xsi:type="proxyAuth:AuthenticationMethodHtpasswd" path=".htpasswd"/>
+    <serviceConfigurationItem xsi:type="proxyAuth:AuthenticationMethodHtpasswd" path="C:\daten\tresorproxy\proxy.core\src\main\resources\config\.htpasswd"/>
     <serviceConfigurationItem xsi:type="proxyAuth:AuthorizationMethodGroupfile" path=".htgroup"/>
     <serviceConfigurationItem xsi:type="proxyAuth:AuthorizationConfiguration">
       <authorizationConfigurationItems xsi:type="proxyAuth:AuthorizationRequireValidUser" pattern="^/private.*"/>

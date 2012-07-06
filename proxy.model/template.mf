@@ -10,8 +10,8 @@ Require-Bundle: org.eclipse.emf.common,
     org.eclipse.emf.ecore.xmi
 Export-Package: de.cloudtresor.model.proxy,
     de.cloudtresor.model.proxy.endpoint
+Spring-Context: config/context.xml
 Excluded-Exports: de.cloudtresor.model.proxy.impl,
     de.cloudtresor.model.proxy.util,
     de.cloudtresor.model.proxy.endpoint.util,
     de.cloudtresor.model.proxy.endpoint.impl
-Spring-Context: config/context.xml

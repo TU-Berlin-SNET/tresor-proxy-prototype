@@ -7,10 +7,6 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-	<util:constant static-field="de.cloudtresor.model.proxy.ProxyFactory.eINSTANCE" id="proxyFactory"/>
-	<osgi:service interface="de.cloudtresor.model.proxy.ProxyFactory" ref="proxyFactory"/>
-	
-	<osgi:service interface="de.cloudtresor.util.ModelUtil">
-		<bean class="de.cloudtresor.util.impl.ModelUtilImpl"/>
-	</osgi:service>
+	<!-- <util:constant static-field="de.cloudtresor.model.proxy.ProxyFactory.eINSTANCE" id="proxyFactory"/>
+	<osgi:service interface="de.cloudtresor.model.proxy.ProxyFactory" ref="proxyFactory"/>  -->
 </beans>

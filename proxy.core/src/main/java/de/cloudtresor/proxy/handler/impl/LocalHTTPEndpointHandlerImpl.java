@@ -42,7 +42,6 @@ public class LocalHTTPEndpointHandlerImpl implements LocalHTTPEndpointHandler {
 		}
 		
 		server = HttpServer.createSimpleServer(null, port);
-		
 		ServerConfiguration serverConfiguration = server.getServerConfiguration();
 		serverConfiguration.addHttpHandler(new LocalHTTPEndpointGrizzlyHandler(configuration), null);
 	}

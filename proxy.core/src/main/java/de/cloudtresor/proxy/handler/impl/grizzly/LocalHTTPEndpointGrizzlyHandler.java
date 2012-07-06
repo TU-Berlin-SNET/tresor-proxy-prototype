@@ -22,29 +22,6 @@ public class LocalHTTPEndpointGrizzlyHandler extends AbstractEndpointGrizzlyHand
 	
 	@Override
 	public void service(final Request request, final Response response) throws Exception {
-		for(AuthorizationConfigurationItem item : getAuthorizationItems(request)) {
-			if(item instanceof AuthorizationRequireValidUser) {
-				if(request.getAuthorization() == null) {
-					final String responseString = "401 Unauthorized.";
-					
-					/*response.suspend();*/
-					/*response.setStatus(HttpStatus.UNAUTHORIZED_401);*/
-					response.setHeader(Header.WWWAuthenticate, "Basic realm=\"TRESOR Service " + endpoint.getService().getName() + "\"");
-					response.setContentLength(responseString.length());
-					
-					response.getNIOWriter().notifyCanWrite(new WriteHandler() {
-						public void onWritePossible() throws Exception {
-							response.getNIOWriter().write(responseString);
-							response.finish();
-						}
-						
-						public void onError(Throwable e) {
-							throw new RuntimeException(e);
-						}
-					}, responseString.length());
-				}
-			}
-		}
+		authorize(request, response);
 	}
-
 }

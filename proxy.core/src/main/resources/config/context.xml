@@ -10,11 +10,11 @@
 	<bean id="defaultHandlerFactory" class="de.cloudtresor.proxy.handler.impl.EndpointHandlerFactoryImpl"/>
 
 	<bean id="proxy" class="de.cloudtresor.proxy.internal.ProxyImpl" destroy-method="shutdown">
-		<constructor-arg name="modelUtil" ref="modelUtil"/>
+		<!-- <constructor-arg name="modelUtil" ref="modelUtil"/>  -->
 		<constructor-arg name="factory" ref="defaultHandlerFactory"/>
 	</bean>
 
 	<osgi:service interface="de.cloudtresor.proxy.Proxy" ref="proxy"/>
 	
-	<osgi:reference interface="de.cloudtresor.util.ModelUtil" id="modelUtil"/>
+	<!-- <osgi:reference interface="de.cloudtresor.util.ModelUtil" id="modelUtil"/>  -->
 </beans>
