@@ -26,58 +26,58 @@ public interface EndpointFactory extends EFactory {
 	EndpointFactory eINSTANCE = de.cloudtresor.model.proxy.endpoint.impl.EndpointFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Local HTTP Endpoint</em>'.
+	 * Returns a new object of class '<em>Local HTTP Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Local HTTP Endpoint</em>'.
+	 * @return a new object of class '<em>Local HTTP Endpoint Configuration</em>'.
 	 * @generated
 	 */
-	LocalHTTPEndpoint createLocalHTTPEndpoint();
+	LocalHTTPEndpointConfiguration createLocalHTTPEndpointConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Local SSL Endpoint</em>'.
+	 * Returns a new object of class '<em>Local SSL Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Local SSL Endpoint</em>'.
+	 * @return a new object of class '<em>Local SSL Endpoint Configuration</em>'.
 	 * @generated
 	 */
-	LocalSSLEndpoint createLocalSSLEndpoint();
+	LocalSSLEndpointConfiguration createLocalSSLEndpointConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Local TSTP Endpoint</em>'.
+	 * Returns a new object of class '<em>Local TSTP Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Local TSTP Endpoint</em>'.
+	 * @return a new object of class '<em>Local TSTP Endpoint Configuration</em>'.
 	 * @generated
 	 */
-	LocalTSTPEndpoint createLocalTSTPEndpoint();
+	LocalTSTPEndpointConfiguration createLocalTSTPEndpointConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Remote HTTP Endpoint</em>'.
+	 * Returns a new object of class '<em>Remote HTTP Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remote HTTP Endpoint</em>'.
+	 * @return a new object of class '<em>Remote HTTP Endpoint Configuration</em>'.
 	 * @generated
 	 */
-	RemoteHTTPEndpoint createRemoteHTTPEndpoint();
+	RemoteHTTPEndpointConfiguration createRemoteHTTPEndpointConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Remote SSL Endpoint</em>'.
+	 * Returns a new object of class '<em>Remote SSL Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remote SSL Endpoint</em>'.
+	 * @return a new object of class '<em>Remote SSL Endpoint Configuration</em>'.
 	 * @generated
 	 */
-	RemoteSSLEndpoint createRemoteSSLEndpoint();
+	RemoteSSLEndpointConfiguration createRemoteSSLEndpointConfiguration();
 
 	/**
-	 * Returns a new object of class '<em>Remote TSTP Endpoint</em>'.
+	 * Returns a new object of class '<em>Remote TSTP Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remote TSTP Endpoint</em>'.
+	 * @return a new object of class '<em>Remote TSTP Endpoint Configuration</em>'.
 	 * @generated
 	 */
-	RemoteTSTPEndpoint createRemoteTSTPEndpoint();
+	RemoteTSTPEndpointConfiguration createRemoteTSTPEndpointConfiguration();
 
 	/**
 	 * Returns a new object of class '<em>Client SSL Configuration</em>'.

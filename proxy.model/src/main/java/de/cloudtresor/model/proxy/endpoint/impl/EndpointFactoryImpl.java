@@ -60,12 +60,12 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EndpointPackage.LOCAL_HTTP_ENDPOINT: return createLocalHTTPEndpoint();
-			case EndpointPackage.LOCAL_SSL_ENDPOINT: return createLocalSSLEndpoint();
-			case EndpointPackage.LOCAL_TSTP_ENDPOINT: return createLocalTSTPEndpoint();
-			case EndpointPackage.REMOTE_HTTP_ENDPOINT: return createRemoteHTTPEndpoint();
-			case EndpointPackage.REMOTE_SSL_ENDPOINT: return createRemoteSSLEndpoint();
-			case EndpointPackage.REMOTE_TSTP_ENDPOINT: return createRemoteTSTPEndpoint();
+			case EndpointPackage.LOCAL_HTTP_ENDPOINT_CONFIGURATION: return createLocalHTTPEndpointConfiguration();
+			case EndpointPackage.LOCAL_SSL_ENDPOINT_CONFIGURATION: return createLocalSSLEndpointConfiguration();
+			case EndpointPackage.LOCAL_TSTP_ENDPOINT_CONFIGURATION: return createLocalTSTPEndpointConfiguration();
+			case EndpointPackage.REMOTE_HTTP_ENDPOINT_CONFIGURATION: return createRemoteHTTPEndpointConfiguration();
+			case EndpointPackage.REMOTE_SSL_ENDPOINT_CONFIGURATION: return createRemoteSSLEndpointConfiguration();
+			case EndpointPackage.REMOTE_TSTP_ENDPOINT_CONFIGURATION: return createRemoteTSTPEndpointConfiguration();
 			case EndpointPackage.CLIENT_SSL_CONFIGURATION: return createClientSSLConfiguration();
 			case EndpointPackage.SERVER_SSL_CONFIGURATION: return createServerSSLConfiguration();
 			default:
@@ -78,9 +78,9 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LocalHTTPEndpoint createLocalHTTPEndpoint() {
-		LocalHTTPEndpointImpl localHTTPEndpoint = new LocalHTTPEndpointImpl();
-		return localHTTPEndpoint;
+	public LocalHTTPEndpointConfiguration createLocalHTTPEndpointConfiguration() {
+		LocalHTTPEndpointConfigurationImpl localHTTPEndpointConfiguration = new LocalHTTPEndpointConfigurationImpl();
+		return localHTTPEndpointConfiguration;
 	}
 
 	/**
@@ -88,9 +88,9 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LocalSSLEndpoint createLocalSSLEndpoint() {
-		LocalSSLEndpointImpl localSSLEndpoint = new LocalSSLEndpointImpl();
-		return localSSLEndpoint;
+	public LocalSSLEndpointConfiguration createLocalSSLEndpointConfiguration() {
+		LocalSSLEndpointConfigurationImpl localSSLEndpointConfiguration = new LocalSSLEndpointConfigurationImpl();
+		return localSSLEndpointConfiguration;
 	}
 
 	/**
@@ -98,9 +98,9 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LocalTSTPEndpoint createLocalTSTPEndpoint() {
-		LocalTSTPEndpointImpl localTSTPEndpoint = new LocalTSTPEndpointImpl();
-		return localTSTPEndpoint;
+	public LocalTSTPEndpointConfiguration createLocalTSTPEndpointConfiguration() {
+		LocalTSTPEndpointConfigurationImpl localTSTPEndpointConfiguration = new LocalTSTPEndpointConfigurationImpl();
+		return localTSTPEndpointConfiguration;
 	}
 
 	/**
@@ -108,9 +108,9 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoteHTTPEndpoint createRemoteHTTPEndpoint() {
-		RemoteHTTPEndpointImpl remoteHTTPEndpoint = new RemoteHTTPEndpointImpl();
-		return remoteHTTPEndpoint;
+	public RemoteHTTPEndpointConfiguration createRemoteHTTPEndpointConfiguration() {
+		RemoteHTTPEndpointConfigurationImpl remoteHTTPEndpointConfiguration = new RemoteHTTPEndpointConfigurationImpl();
+		return remoteHTTPEndpointConfiguration;
 	}
 
 	/**
@@ -118,9 +118,9 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoteSSLEndpoint createRemoteSSLEndpoint() {
-		RemoteSSLEndpointImpl remoteSSLEndpoint = new RemoteSSLEndpointImpl();
-		return remoteSSLEndpoint;
+	public RemoteSSLEndpointConfiguration createRemoteSSLEndpointConfiguration() {
+		RemoteSSLEndpointConfigurationImpl remoteSSLEndpointConfiguration = new RemoteSSLEndpointConfigurationImpl();
+		return remoteSSLEndpointConfiguration;
 	}
 
 	/**
@@ -128,9 +128,9 @@ public class EndpointFactoryImpl extends EFactoryImpl implements EndpointFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoteTSTPEndpoint createRemoteTSTPEndpoint() {
-		RemoteTSTPEndpointImpl remoteTSTPEndpoint = new RemoteTSTPEndpointImpl();
-		return remoteTSTPEndpoint;
+	public RemoteTSTPEndpointConfiguration createRemoteTSTPEndpointConfiguration() {
+		RemoteTSTPEndpointConfigurationImpl remoteTSTPEndpointConfiguration = new RemoteTSTPEndpointConfigurationImpl();
+		return remoteTSTPEndpointConfiguration;
 	}
 
 	/**

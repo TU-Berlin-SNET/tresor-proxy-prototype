@@ -225,6 +225,15 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getService_Endpoints() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getServiceConfigurationItem() {
 		return serviceConfigurationItemEClass;
 	}
@@ -293,6 +302,7 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__SERVICE_CONFIGURATION_ITEM);
+		createEReference(serviceEClass, SERVICE__ENDPOINTS);
 
 		serviceConfigurationItemEClass = createEClass(SERVICE_CONFIGURATION_ITEM);
 
@@ -351,6 +361,7 @@ public class ProxyPackageImpl extends EPackageImpl implements ProxyPackage {
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_ServiceConfigurationItem(), this.getServiceConfigurationItem(), null, "serviceConfigurationItem", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Endpoints(), theEndpointPackage.getEndpointConfiguration(), theEndpointPackage.getEndpointConfiguration_Service(), "endpoints", null, 0, -1, Service.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceConfigurationItemEClass, ServiceConfigurationItem.class, "ServiceConfigurationItem", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

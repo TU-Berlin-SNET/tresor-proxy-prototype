@@ -62,318 +62,6 @@ public interface EndpointPackage extends EPackage {
 	EndpointPackage eINSTANCE = de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointImpl <em>Local HTTP Endpoint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointImpl
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalHTTPEndpoint()
-	 * @generated
-	 */
-	int LOCAL_HTTP_ENDPOINT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_HTTP_ENDPOINT__URL = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_HTTP_ENDPOINT__SERVICE = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_HTTP_ENDPOINT__BOUND_INTERFACES = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Local HTTP Endpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_HTTP_ENDPOINT_FEATURE_COUNT = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 3;
-
-	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointImpl <em>Local SSL Endpoint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointImpl
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalSSLEndpoint()
-	 * @generated
-	 */
-	int LOCAL_SSL_ENDPOINT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_SSL_ENDPOINT__URL = LOCAL_HTTP_ENDPOINT__URL;
-
-	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_SSL_ENDPOINT__SERVICE = LOCAL_HTTP_ENDPOINT__SERVICE;
-
-	/**
-	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_SSL_ENDPOINT__BOUND_INTERFACES = LOCAL_HTTP_ENDPOINT__BOUND_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Ssl Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_SSL_ENDPOINT__SSL_CONFIGURATION = LOCAL_HTTP_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Local SSL Endpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_SSL_ENDPOINT_FEATURE_COUNT = LOCAL_HTTP_ENDPOINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointImpl <em>Local TSTP Endpoint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointImpl
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalTSTPEndpoint()
-	 * @generated
-	 */
-	int LOCAL_TSTP_ENDPOINT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_TSTP_ENDPOINT__URL = LOCAL_SSL_ENDPOINT__URL;
-
-	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_TSTP_ENDPOINT__SERVICE = LOCAL_SSL_ENDPOINT__SERVICE;
-
-	/**
-	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_TSTP_ENDPOINT__BOUND_INTERFACES = LOCAL_SSL_ENDPOINT__BOUND_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Ssl Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_TSTP_ENDPOINT__SSL_CONFIGURATION = LOCAL_SSL_ENDPOINT__SSL_CONFIGURATION;
-
-	/**
-	 * The feature id for the '<em><b>Tstp Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_TSTP_ENDPOINT__TSTP_CONFIGURATION = LOCAL_SSL_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Local TSTP Endpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_TSTP_ENDPOINT_FEATURE_COUNT = LOCAL_SSL_ENDPOINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointImpl <em>Remote HTTP Endpoint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointImpl
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteHTTPEndpoint()
-	 * @generated
-	 */
-	int REMOTE_HTTP_ENDPOINT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_HTTP_ENDPOINT__URL = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_HTTP_ENDPOINT__SERVICE = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Remote HTTP Endpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_HTTP_ENDPOINT_FEATURE_COUNT = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointImpl <em>Remote SSL Endpoint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointImpl
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteSSLEndpoint()
-	 * @generated
-	 */
-	int REMOTE_SSL_ENDPOINT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_SSL_ENDPOINT__URL = REMOTE_HTTP_ENDPOINT__URL;
-
-	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_SSL_ENDPOINT__SERVICE = REMOTE_HTTP_ENDPOINT__SERVICE;
-
-	/**
-	 * The feature id for the '<em><b>Ssl Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_SSL_ENDPOINT__SSL_CONFIGURATION = REMOTE_HTTP_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Remote SSL Endpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_SSL_ENDPOINT_FEATURE_COUNT = REMOTE_HTTP_ENDPOINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointImpl <em>Remote TSTP Endpoint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointImpl
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteTSTPEndpoint()
-	 * @generated
-	 */
-	int REMOTE_TSTP_ENDPOINT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_TSTP_ENDPOINT__URL = LOCAL_SSL_ENDPOINT__URL;
-
-	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_TSTP_ENDPOINT__SERVICE = LOCAL_SSL_ENDPOINT__SERVICE;
-
-	/**
-	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_TSTP_ENDPOINT__BOUND_INTERFACES = LOCAL_SSL_ENDPOINT__BOUND_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Ssl Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_TSTP_ENDPOINT__SSL_CONFIGURATION = LOCAL_SSL_ENDPOINT__SSL_CONFIGURATION;
-
-	/**
-	 * The feature id for the '<em><b>Tstp Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_TSTP_ENDPOINT__TSTP_CONFIGURATION = LOCAL_SSL_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Remote TSTP Endpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOTE_TSTP_ENDPOINT_FEATURE_COUNT = LOCAL_SSL_ENDPOINT_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.EndpointConfiguration <em>Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -381,7 +69,7 @@ public interface EndpointPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getEndpointConfiguration()
 	 * @generated
 	 */
-	int ENDPOINT_CONFIGURATION = 6;
+	int ENDPOINT_CONFIGURATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -390,7 +78,7 @@ public interface EndpointPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENDPOINT_CONFIGURATION__URL = 0;
+	int ENDPOINT_CONFIGURATION__URL = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference.
@@ -399,7 +87,7 @@ public interface EndpointPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENDPOINT_CONFIGURATION__SERVICE = 1;
+	int ENDPOINT_CONFIGURATION__SERVICE = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Configuration</em>' class.
@@ -408,45 +96,191 @@ public interface EndpointPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENDPOINT_CONFIGURATION_FEATURE_COUNT = 2;
+	int ENDPOINT_CONFIGURATION_FEATURE_COUNT = ProxyPackage.CONFIGURATION_ITEM_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpoint <em>Secure Endpoint</em>}' class.
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration <em>Local Endpoint Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpoint
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getSecureEndpoint()
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalEndpointConfiguration()
 	 * @generated
 	 */
-	int SECURE_ENDPOINT = 7;
+	int LOCAL_ENDPOINT_CONFIGURATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ssl Configuration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECURE_ENDPOINT__SSL_CONFIGURATION = 0;
-
-	/**
-	 * The number of structural features of the '<em>Secure Endpoint</em>' class.
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURE_ENDPOINT_FEATURE_COUNT = 1;
+	int LOCAL_ENDPOINT_CONFIGURATION__URL = ENDPOINT_CONFIGURATION__URL;
 
 	/**
-	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpoint <em>TSTP Endpoint</em>}' class.
+	 * The feature id for the '<em><b>Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpoint
-	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getTSTPEndpoint()
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_ENDPOINT_CONFIGURATION__SERVICE = ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The number of structural features of the '<em>Local Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_ENDPOINT_CONFIGURATION_FEATURE_COUNT = ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointConfigurationImpl <em>Local HTTP Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointConfigurationImpl
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalHTTPEndpointConfiguration()
 	 * @generated
 	 */
-	int TSTP_ENDPOINT = 8;
+	int LOCAL_HTTP_ENDPOINT_CONFIGURATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_HTTP_ENDPOINT_CONFIGURATION__URL = LOCAL_ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_HTTP_ENDPOINT_CONFIGURATION__SERVICE = LOCAL_ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_HTTP_ENDPOINT_CONFIGURATION__BOUND_INTERFACES = LOCAL_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Local HTTP Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_HTTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT = LOCAL_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointConfigurationImpl <em>Local SSL Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointConfigurationImpl
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalSSLEndpointConfiguration()
+	 * @generated
+	 */
+	int LOCAL_SSL_ENDPOINT_CONFIGURATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_SSL_ENDPOINT_CONFIGURATION__URL = LOCAL_HTTP_ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_SSL_ENDPOINT_CONFIGURATION__SERVICE = LOCAL_HTTP_ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_SSL_ENDPOINT_CONFIGURATION__BOUND_INTERFACES = LOCAL_HTTP_ENDPOINT_CONFIGURATION__BOUND_INTERFACES;
+
+	/**
+	 * The feature id for the '<em><b>Ssl Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_SSL_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION = LOCAL_HTTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Local SSL Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_SSL_ENDPOINT_CONFIGURATION_FEATURE_COUNT = LOCAL_HTTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointConfigurationImpl <em>Local TSTP Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointConfigurationImpl
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalTSTPEndpointConfiguration()
+	 * @generated
+	 */
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION__URL = LOCAL_SSL_ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION__SERVICE = LOCAL_SSL_ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION__BOUND_INTERFACES = LOCAL_SSL_ENDPOINT_CONFIGURATION__BOUND_INTERFACES;
+
+	/**
+	 * The feature id for the '<em><b>Ssl Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION = LOCAL_SSL_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Tstp Configuration</b></em>' reference.
@@ -455,16 +289,256 @@ public interface EndpointPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TSTP_ENDPOINT__TSTP_CONFIGURATION = 0;
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION__TSTP_CONFIGURATION = LOCAL_SSL_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>TSTP Endpoint</em>' class.
+	 * The number of structural features of the '<em>Local TSTP Endpoint Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TSTP_ENDPOINT_FEATURE_COUNT = 1;
+	int LOCAL_TSTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT = LOCAL_SSL_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration <em>Remote Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteEndpointConfiguration()
+	 * @generated
+	 */
+	int REMOTE_ENDPOINT_CONFIGURATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_ENDPOINT_CONFIGURATION__URL = ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_ENDPOINT_CONFIGURATION__SERVICE = ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The number of structural features of the '<em>Remote Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_ENDPOINT_CONFIGURATION_FEATURE_COUNT = ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointConfigurationImpl <em>Remote HTTP Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointConfigurationImpl
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteHTTPEndpointConfiguration()
+	 * @generated
+	 */
+	int REMOTE_HTTP_ENDPOINT_CONFIGURATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_HTTP_ENDPOINT_CONFIGURATION__URL = REMOTE_ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_HTTP_ENDPOINT_CONFIGURATION__SERVICE = REMOTE_ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The number of structural features of the '<em>Remote HTTP Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_HTTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT = REMOTE_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointConfigurationImpl <em>Remote SSL Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointConfigurationImpl
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteSSLEndpointConfiguration()
+	 * @generated
+	 */
+	int REMOTE_SSL_ENDPOINT_CONFIGURATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_SSL_ENDPOINT_CONFIGURATION__URL = REMOTE_HTTP_ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_SSL_ENDPOINT_CONFIGURATION__SERVICE = REMOTE_HTTP_ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Ssl Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_SSL_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION = REMOTE_HTTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Remote SSL Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_SSL_ENDPOINT_CONFIGURATION_FEATURE_COUNT = REMOTE_HTTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointConfigurationImpl <em>Remote TSTP Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointConfigurationImpl
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteTSTPEndpointConfiguration()
+	 * @generated
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION__URL = LOCAL_SSL_ENDPOINT_CONFIGURATION__URL;
+
+	/**
+	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION__SERVICE = LOCAL_SSL_ENDPOINT_CONFIGURATION__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Bound Interfaces</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION__BOUND_INTERFACES = LOCAL_SSL_ENDPOINT_CONFIGURATION__BOUND_INTERFACES;
+
+	/**
+	 * The feature id for the '<em><b>Ssl Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION = LOCAL_SSL_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Tstp Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION__TSTP_CONFIGURATION = LOCAL_SSL_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Remote TSTP Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOTE_TSTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT = LOCAL_SSL_ENDPOINT_CONFIGURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration <em>Secure Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getSecureEndpointConfiguration()
+	 * @generated
+	 */
+	int SECURE_ENDPOINT_CONFIGURATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Ssl Configuration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURE_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Secure Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURE_ENDPOINT_CONFIGURATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration <em>TSTP Endpoint Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration
+	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getTSTPEndpointConfiguration()
+	 * @generated
+	 */
+	int TSTP_ENDPOINT_CONFIGURATION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Tstp Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSTP_ENDPOINT_CONFIGURATION__TSTP_CONFIGURATION = 0;
+
+	/**
+	 * The number of structural features of the '<em>TSTP Endpoint Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TSTP_ENDPOINT_CONFIGURATION_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.cloudtresor.model.proxy.endpoint.SSLConfiguration <em>SSL Configuration</em>}' class.
@@ -474,7 +548,7 @@ public interface EndpointPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getSSLConfiguration()
 	 * @generated
 	 */
-	int SSL_CONFIGURATION = 9;
+	int SSL_CONFIGURATION = 11;
 
 	/**
 	 * The number of structural features of the '<em>SSL Configuration</em>' class.
@@ -493,7 +567,7 @@ public interface EndpointPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getClientSSLConfiguration()
 	 * @generated
 	 */
-	int CLIENT_SSL_CONFIGURATION = 10;
+	int CLIENT_SSL_CONFIGURATION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Accepted Server Certificates</b></em>' attribute list.
@@ -530,7 +604,7 @@ public interface EndpointPackage extends EPackage {
 	 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getServerSSLConfiguration()
 	 * @generated
 	 */
-	int SERVER_SSL_CONFIGURATION = 11;
+	int SERVER_SSL_CONFIGURATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Server Certificate</b></em>' attribute.
@@ -559,77 +633,6 @@ public interface EndpointPackage extends EPackage {
 	 */
 	int SERVER_SSL_CONFIGURATION_FEATURE_COUNT = SSL_CONFIGURATION_FEATURE_COUNT + 2;
 
-
-	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint <em>Local HTTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Local HTTP Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint
-	 * @generated
-	 */
-	EClass getLocalHTTPEndpoint();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint#getBoundInterfaces <em>Bound Interfaces</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Bound Interfaces</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint#getBoundInterfaces()
-	 * @see #getLocalHTTPEndpoint()
-	 * @generated
-	 */
-	EAttribute getLocalHTTPEndpoint_BoundInterfaces();
-
-	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalSSLEndpoint <em>Local SSL Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Local SSL Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalSSLEndpoint
-	 * @generated
-	 */
-	EClass getLocalSSLEndpoint();
-
-	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpoint <em>Local TSTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Local TSTP Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpoint
-	 * @generated
-	 */
-	EClass getLocalTSTPEndpoint();
-
-	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpoint <em>Remote HTTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remote HTTP Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpoint
-	 * @generated
-	 */
-	EClass getRemoteHTTPEndpoint();
-
-	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpoint <em>Remote SSL Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remote SSL Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpoint
-	 * @generated
-	 */
-	EClass getRemoteSSLEndpoint();
-
-	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpoint <em>Remote TSTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remote TSTP Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpoint
-	 * @generated
-	 */
-	EClass getRemoteTSTPEndpoint();
 
 	/**
 	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.EndpointConfiguration <em>Configuration</em>}'.
@@ -664,46 +667,137 @@ public interface EndpointPackage extends EPackage {
 	EReference getEndpointConfiguration_Service();
 
 	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpoint <em>Secure Endpoint</em>}'.
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration <em>Local Endpoint Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Secure Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpoint
+	 * @return the meta object for class '<em>Local Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration
 	 * @generated
 	 */
-	EClass getSecureEndpoint();
+	EClass getLocalEndpointConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpoint#getSslConfiguration <em>Ssl Configuration</em>}'.
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration <em>Local HTTP Endpoint Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ssl Configuration</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpoint#getSslConfiguration()
-	 * @see #getSecureEndpoint()
+	 * @return the meta object for class '<em>Local HTTP Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration
 	 * @generated
 	 */
-	EReference getSecureEndpoint_SslConfiguration();
+	EClass getLocalHTTPEndpointConfiguration();
 
 	/**
-	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpoint <em>TSTP Endpoint</em>}'.
+	 * Returns the meta object for the attribute list '{@link de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration#getBoundInterfaces <em>Bound Interfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>TSTP Endpoint</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpoint
+	 * @return the meta object for the attribute list '<em>Bound Interfaces</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration#getBoundInterfaces()
+	 * @see #getLocalHTTPEndpointConfiguration()
 	 * @generated
 	 */
-	EClass getTSTPEndpoint();
+	EAttribute getLocalHTTPEndpointConfiguration_BoundInterfaces();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpoint#getTstpConfiguration <em>Tstp Configuration</em>}'.
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalSSLEndpointConfiguration <em>Local SSL Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Local SSL Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalSSLEndpointConfiguration
+	 * @generated
+	 */
+	EClass getLocalSSLEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpointConfiguration <em>Local TSTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Local TSTP Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpointConfiguration
+	 * @generated
+	 */
+	EClass getLocalTSTPEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration <em>Remote Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Remote Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration
+	 * @generated
+	 */
+	EClass getRemoteEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpointConfiguration <em>Remote HTTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Remote HTTP Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpointConfiguration
+	 * @generated
+	 */
+	EClass getRemoteHTTPEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpointConfiguration <em>Remote SSL Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Remote SSL Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpointConfiguration
+	 * @generated
+	 */
+	EClass getRemoteSSLEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpointConfiguration <em>Remote TSTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Remote TSTP Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpointConfiguration
+	 * @generated
+	 */
+	EClass getRemoteTSTPEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration <em>Secure Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Secure Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration
+	 * @generated
+	 */
+	EClass getSecureEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration#getSslConfiguration <em>Ssl Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Ssl Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration#getSslConfiguration()
+	 * @see #getSecureEndpointConfiguration()
+	 * @generated
+	 */
+	EReference getSecureEndpointConfiguration_SslConfiguration();
+
+	/**
+	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration <em>TSTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TSTP Endpoint Configuration</em>'.
+	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration
+	 * @generated
+	 */
+	EClass getTSTPEndpointConfiguration();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration#getTstpConfiguration <em>Tstp Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Tstp Configuration</em>'.
-	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpoint#getTstpConfiguration()
-	 * @see #getTSTPEndpoint()
+	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration#getTstpConfiguration()
+	 * @see #getTSTPEndpointConfiguration()
 	 * @generated
 	 */
-	EReference getTSTPEndpoint_TstpConfiguration();
+	EReference getTSTPEndpointConfiguration_TstpConfiguration();
 
 	/**
 	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.endpoint.SSLConfiguration <em>SSL Configuration</em>}'.
@@ -802,74 +896,6 @@ public interface EndpointPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointImpl <em>Local HTTP Endpoint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointImpl
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalHTTPEndpoint()
-		 * @generated
-		 */
-		EClass LOCAL_HTTP_ENDPOINT = eINSTANCE.getLocalHTTPEndpoint();
-
-		/**
-		 * The meta object literal for the '<em><b>Bound Interfaces</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOCAL_HTTP_ENDPOINT__BOUND_INTERFACES = eINSTANCE.getLocalHTTPEndpoint_BoundInterfaces();
-
-		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointImpl <em>Local SSL Endpoint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointImpl
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalSSLEndpoint()
-		 * @generated
-		 */
-		EClass LOCAL_SSL_ENDPOINT = eINSTANCE.getLocalSSLEndpoint();
-
-		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointImpl <em>Local TSTP Endpoint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointImpl
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalTSTPEndpoint()
-		 * @generated
-		 */
-		EClass LOCAL_TSTP_ENDPOINT = eINSTANCE.getLocalTSTPEndpoint();
-
-		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointImpl <em>Remote HTTP Endpoint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointImpl
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteHTTPEndpoint()
-		 * @generated
-		 */
-		EClass REMOTE_HTTP_ENDPOINT = eINSTANCE.getRemoteHTTPEndpoint();
-
-		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointImpl <em>Remote SSL Endpoint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointImpl
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteSSLEndpoint()
-		 * @generated
-		 */
-		EClass REMOTE_SSL_ENDPOINT = eINSTANCE.getRemoteSSLEndpoint();
-
-		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointImpl <em>Remote TSTP Endpoint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointImpl
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteTSTPEndpoint()
-		 * @generated
-		 */
-		EClass REMOTE_TSTP_ENDPOINT = eINSTANCE.getRemoteTSTPEndpoint();
-
-		/**
 		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.EndpointConfiguration <em>Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -896,32 +922,120 @@ public interface EndpointPackage extends EPackage {
 		EReference ENDPOINT_CONFIGURATION__SERVICE = eINSTANCE.getEndpointConfiguration_Service();
 
 		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpoint <em>Secure Endpoint</em>}' class.
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration <em>Local Endpoint Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpoint
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getSecureEndpoint()
+		 * @see de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalEndpointConfiguration()
 		 * @generated
 		 */
-		EClass SECURE_ENDPOINT = eINSTANCE.getSecureEndpoint();
+		EClass LOCAL_ENDPOINT_CONFIGURATION = eINSTANCE.getLocalEndpointConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Ssl Configuration</b></em>' reference feature.
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointConfigurationImpl <em>Local HTTP Endpoint Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalHTTPEndpointConfigurationImpl
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalHTTPEndpointConfiguration()
 		 * @generated
 		 */
-		EReference SECURE_ENDPOINT__SSL_CONFIGURATION = eINSTANCE.getSecureEndpoint_SslConfiguration();
+		EClass LOCAL_HTTP_ENDPOINT_CONFIGURATION = eINSTANCE.getLocalHTTPEndpointConfiguration();
 
 		/**
-		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpoint <em>TSTP Endpoint</em>}' class.
+		 * The meta object literal for the '<em><b>Bound Interfaces</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpoint
-		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getTSTPEndpoint()
 		 * @generated
 		 */
-		EClass TSTP_ENDPOINT = eINSTANCE.getTSTPEndpoint();
+		EAttribute LOCAL_HTTP_ENDPOINT_CONFIGURATION__BOUND_INTERFACES = eINSTANCE.getLocalHTTPEndpointConfiguration_BoundInterfaces();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointConfigurationImpl <em>Local SSL Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalSSLEndpointConfigurationImpl
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalSSLEndpointConfiguration()
+		 * @generated
+		 */
+		EClass LOCAL_SSL_ENDPOINT_CONFIGURATION = eINSTANCE.getLocalSSLEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointConfigurationImpl <em>Local TSTP Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.LocalTSTPEndpointConfigurationImpl
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getLocalTSTPEndpointConfiguration()
+		 * @generated
+		 */
+		EClass LOCAL_TSTP_ENDPOINT_CONFIGURATION = eINSTANCE.getLocalTSTPEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration <em>Remote Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteEndpointConfiguration()
+		 * @generated
+		 */
+		EClass REMOTE_ENDPOINT_CONFIGURATION = eINSTANCE.getRemoteEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointConfigurationImpl <em>Remote HTTP Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteHTTPEndpointConfigurationImpl
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteHTTPEndpointConfiguration()
+		 * @generated
+		 */
+		EClass REMOTE_HTTP_ENDPOINT_CONFIGURATION = eINSTANCE.getRemoteHTTPEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointConfigurationImpl <em>Remote SSL Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteSSLEndpointConfigurationImpl
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteSSLEndpointConfiguration()
+		 * @generated
+		 */
+		EClass REMOTE_SSL_ENDPOINT_CONFIGURATION = eINSTANCE.getRemoteSSLEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointConfigurationImpl <em>Remote TSTP Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.RemoteTSTPEndpointConfigurationImpl
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getRemoteTSTPEndpointConfiguration()
+		 * @generated
+		 */
+		EClass REMOTE_TSTP_ENDPOINT_CONFIGURATION = eINSTANCE.getRemoteTSTPEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration <em>Secure Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getSecureEndpointConfiguration()
+		 * @generated
+		 */
+		EClass SECURE_ENDPOINT_CONFIGURATION = eINSTANCE.getSecureEndpointConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Ssl Configuration</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURE_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION = eINSTANCE.getSecureEndpointConfiguration_SslConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration <em>TSTP Endpoint Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration
+		 * @see de.cloudtresor.model.proxy.endpoint.impl.EndpointPackageImpl#getTSTPEndpointConfiguration()
+		 * @generated
+		 */
+		EClass TSTP_ENDPOINT_CONFIGURATION = eINSTANCE.getTSTPEndpointConfiguration();
 
 		/**
 		 * The meta object literal for the '<em><b>Tstp Configuration</b></em>' reference feature.
@@ -929,7 +1043,7 @@ public interface EndpointPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TSTP_ENDPOINT__TSTP_CONFIGURATION = eINSTANCE.getTSTPEndpoint_TstpConfiguration();
+		EReference TSTP_ENDPOINT_CONFIGURATION__TSTP_CONFIGURATION = eINSTANCE.getTSTPEndpointConfiguration_TstpConfiguration();
 
 		/**
 		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.endpoint.SSLConfiguration <em>SSL Configuration</em>}' class.

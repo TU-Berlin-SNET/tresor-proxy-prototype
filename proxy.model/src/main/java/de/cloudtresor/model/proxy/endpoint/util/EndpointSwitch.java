@@ -72,81 +72,104 @@ public class EndpointSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case EndpointPackage.LOCAL_HTTP_ENDPOINT: {
-				LocalHTTPEndpoint localHTTPEndpoint = (LocalHTTPEndpoint)theEObject;
-				T result = caseLocalHTTPEndpoint(localHTTPEndpoint);
-				if (result == null) result = caseConfigurationItem(localHTTPEndpoint);
-				if (result == null) result = caseEndpointConfiguration(localHTTPEndpoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EndpointPackage.LOCAL_SSL_ENDPOINT: {
-				LocalSSLEndpoint localSSLEndpoint = (LocalSSLEndpoint)theEObject;
-				T result = caseLocalSSLEndpoint(localSSLEndpoint);
-				if (result == null) result = caseLocalHTTPEndpoint(localSSLEndpoint);
-				if (result == null) result = caseSecureEndpoint(localSSLEndpoint);
-				if (result == null) result = caseConfigurationItem(localSSLEndpoint);
-				if (result == null) result = caseEndpointConfiguration(localSSLEndpoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EndpointPackage.LOCAL_TSTP_ENDPOINT: {
-				LocalTSTPEndpoint localTSTPEndpoint = (LocalTSTPEndpoint)theEObject;
-				T result = caseLocalTSTPEndpoint(localTSTPEndpoint);
-				if (result == null) result = caseLocalSSLEndpoint(localTSTPEndpoint);
-				if (result == null) result = caseTSTPEndpoint(localTSTPEndpoint);
-				if (result == null) result = caseLocalHTTPEndpoint(localTSTPEndpoint);
-				if (result == null) result = caseSecureEndpoint(localTSTPEndpoint);
-				if (result == null) result = caseConfigurationItem(localTSTPEndpoint);
-				if (result == null) result = caseEndpointConfiguration(localTSTPEndpoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EndpointPackage.REMOTE_HTTP_ENDPOINT: {
-				RemoteHTTPEndpoint remoteHTTPEndpoint = (RemoteHTTPEndpoint)theEObject;
-				T result = caseRemoteHTTPEndpoint(remoteHTTPEndpoint);
-				if (result == null) result = caseConfigurationItem(remoteHTTPEndpoint);
-				if (result == null) result = caseEndpointConfiguration(remoteHTTPEndpoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EndpointPackage.REMOTE_SSL_ENDPOINT: {
-				RemoteSSLEndpoint remoteSSLEndpoint = (RemoteSSLEndpoint)theEObject;
-				T result = caseRemoteSSLEndpoint(remoteSSLEndpoint);
-				if (result == null) result = caseRemoteHTTPEndpoint(remoteSSLEndpoint);
-				if (result == null) result = caseSecureEndpoint(remoteSSLEndpoint);
-				if (result == null) result = caseConfigurationItem(remoteSSLEndpoint);
-				if (result == null) result = caseEndpointConfiguration(remoteSSLEndpoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EndpointPackage.REMOTE_TSTP_ENDPOINT: {
-				RemoteTSTPEndpoint remoteTSTPEndpoint = (RemoteTSTPEndpoint)theEObject;
-				T result = caseRemoteTSTPEndpoint(remoteTSTPEndpoint);
-				if (result == null) result = caseLocalSSLEndpoint(remoteTSTPEndpoint);
-				if (result == null) result = caseTSTPEndpoint(remoteTSTPEndpoint);
-				if (result == null) result = caseLocalHTTPEndpoint(remoteTSTPEndpoint);
-				if (result == null) result = caseSecureEndpoint(remoteTSTPEndpoint);
-				if (result == null) result = caseConfigurationItem(remoteTSTPEndpoint);
-				if (result == null) result = caseEndpointConfiguration(remoteTSTPEndpoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case EndpointPackage.ENDPOINT_CONFIGURATION: {
 				EndpointConfiguration endpointConfiguration = (EndpointConfiguration)theEObject;
 				T result = caseEndpointConfiguration(endpointConfiguration);
+				if (result == null) result = caseConfigurationItem(endpointConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EndpointPackage.SECURE_ENDPOINT: {
-				SecureEndpoint<?> secureEndpoint = (SecureEndpoint<?>)theEObject;
-				T result = caseSecureEndpoint(secureEndpoint);
+			case EndpointPackage.LOCAL_ENDPOINT_CONFIGURATION: {
+				LocalEndpointConfiguration localEndpointConfiguration = (LocalEndpointConfiguration)theEObject;
+				T result = caseLocalEndpointConfiguration(localEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(localEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(localEndpointConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case EndpointPackage.TSTP_ENDPOINT: {
-				TSTPEndpoint<?> tstpEndpoint = (TSTPEndpoint<?>)theEObject;
-				T result = caseTSTPEndpoint(tstpEndpoint);
+			case EndpointPackage.LOCAL_HTTP_ENDPOINT_CONFIGURATION: {
+				LocalHTTPEndpointConfiguration localHTTPEndpointConfiguration = (LocalHTTPEndpointConfiguration)theEObject;
+				T result = caseLocalHTTPEndpointConfiguration(localHTTPEndpointConfiguration);
+				if (result == null) result = caseLocalEndpointConfiguration(localHTTPEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(localHTTPEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(localHTTPEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.LOCAL_SSL_ENDPOINT_CONFIGURATION: {
+				LocalSSLEndpointConfiguration localSSLEndpointConfiguration = (LocalSSLEndpointConfiguration)theEObject;
+				T result = caseLocalSSLEndpointConfiguration(localSSLEndpointConfiguration);
+				if (result == null) result = caseLocalHTTPEndpointConfiguration(localSSLEndpointConfiguration);
+				if (result == null) result = caseSecureEndpointConfiguration(localSSLEndpointConfiguration);
+				if (result == null) result = caseLocalEndpointConfiguration(localSSLEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(localSSLEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(localSSLEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.LOCAL_TSTP_ENDPOINT_CONFIGURATION: {
+				LocalTSTPEndpointConfiguration localTSTPEndpointConfiguration = (LocalTSTPEndpointConfiguration)theEObject;
+				T result = caseLocalTSTPEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseLocalSSLEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseTSTPEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseLocalHTTPEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseSecureEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseLocalEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(localTSTPEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(localTSTPEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.REMOTE_ENDPOINT_CONFIGURATION: {
+				RemoteEndpointConfiguration remoteEndpointConfiguration = (RemoteEndpointConfiguration)theEObject;
+				T result = caseRemoteEndpointConfiguration(remoteEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(remoteEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(remoteEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.REMOTE_HTTP_ENDPOINT_CONFIGURATION: {
+				RemoteHTTPEndpointConfiguration remoteHTTPEndpointConfiguration = (RemoteHTTPEndpointConfiguration)theEObject;
+				T result = caseRemoteHTTPEndpointConfiguration(remoteHTTPEndpointConfiguration);
+				if (result == null) result = caseRemoteEndpointConfiguration(remoteHTTPEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(remoteHTTPEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(remoteHTTPEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.REMOTE_SSL_ENDPOINT_CONFIGURATION: {
+				RemoteSSLEndpointConfiguration remoteSSLEndpointConfiguration = (RemoteSSLEndpointConfiguration)theEObject;
+				T result = caseRemoteSSLEndpointConfiguration(remoteSSLEndpointConfiguration);
+				if (result == null) result = caseRemoteHTTPEndpointConfiguration(remoteSSLEndpointConfiguration);
+				if (result == null) result = caseSecureEndpointConfiguration(remoteSSLEndpointConfiguration);
+				if (result == null) result = caseRemoteEndpointConfiguration(remoteSSLEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(remoteSSLEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(remoteSSLEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.REMOTE_TSTP_ENDPOINT_CONFIGURATION: {
+				RemoteTSTPEndpointConfiguration remoteTSTPEndpointConfiguration = (RemoteTSTPEndpointConfiguration)theEObject;
+				T result = caseRemoteTSTPEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseLocalSSLEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseTSTPEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseLocalHTTPEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseSecureEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseLocalEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseEndpointConfiguration(remoteTSTPEndpointConfiguration);
+				if (result == null) result = caseConfigurationItem(remoteTSTPEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.SECURE_ENDPOINT_CONFIGURATION: {
+				SecureEndpointConfiguration<?> secureEndpointConfiguration = (SecureEndpointConfiguration<?>)theEObject;
+				T result = caseSecureEndpointConfiguration(secureEndpointConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case EndpointPackage.TSTP_ENDPOINT_CONFIGURATION: {
+				TSTPEndpointConfiguration<?> tstpEndpointConfiguration = (TSTPEndpointConfiguration<?>)theEObject;
+				T result = caseTSTPEndpointConfiguration(tstpEndpointConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -175,96 +198,6 @@ public class EndpointSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Local HTTP Endpoint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Local HTTP Endpoint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLocalHTTPEndpoint(LocalHTTPEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Local SSL Endpoint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Local SSL Endpoint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLocalSSLEndpoint(LocalSSLEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Local TSTP Endpoint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Local TSTP Endpoint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLocalTSTPEndpoint(LocalTSTPEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remote HTTP Endpoint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remote HTTP Endpoint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRemoteHTTPEndpoint(RemoteHTTPEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remote SSL Endpoint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remote SSL Endpoint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRemoteSSLEndpoint(RemoteSSLEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remote TSTP Endpoint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remote TSTP Endpoint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRemoteTSTPEndpoint(RemoteTSTPEndpoint object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -280,32 +213,152 @@ public class EndpointSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Secure Endpoint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Local Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Secure Endpoint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Local Endpoint Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <C extends SSLConfiguration> T caseSecureEndpoint(SecureEndpoint<C> object) {
+	public T caseLocalEndpointConfiguration(LocalEndpointConfiguration object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>TSTP Endpoint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Local HTTP Endpoint Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>TSTP Endpoint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Local HTTP Endpoint Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <C extends SSLConfiguration> T caseTSTPEndpoint(TSTPEndpoint<C> object) {
+	public T caseLocalHTTPEndpointConfiguration(LocalHTTPEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Local SSL Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Local SSL Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocalSSLEndpointConfiguration(LocalSSLEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Local TSTP Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Local TSTP Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocalTSTPEndpointConfiguration(LocalTSTPEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Remote Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Remote Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRemoteEndpointConfiguration(RemoteEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Remote HTTP Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Remote HTTP Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRemoteHTTPEndpointConfiguration(RemoteHTTPEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Remote SSL Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Remote SSL Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRemoteSSLEndpointConfiguration(RemoteSSLEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Remote TSTP Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Remote TSTP Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRemoteTSTPEndpointConfiguration(RemoteTSTPEndpointConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Secure Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Secure Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <C extends SSLConfiguration> T caseSecureEndpointConfiguration(SecureEndpointConfiguration<C> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TSTP Endpoint Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TSTP Endpoint Configuration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <C extends SSLConfiguration> T caseTSTPEndpointConfiguration(TSTPEndpointConfiguration<C> object) {
 		return null;
 	}
 

@@ -6,6 +6,8 @@
  */
 package de.cloudtresor.model.proxy;
 
+import de.cloudtresor.model.proxy.endpoint.EndpointConfiguration;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -17,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.cloudtresor.model.proxy.Service#getServiceConfigurationItem <em>Service Configuration Item</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.Service#getEndpoints <em>Endpoints</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,5 +43,23 @@ public interface Service extends IdentifiableElement {
 	 * @generated
 	 */
 	EList<ServiceConfigurationItem> getServiceConfigurationItem();
+
+	/**
+	 * Returns the value of the '<em><b>Endpoints</b></em>' reference list.
+	 * The list contents are of type {@link de.cloudtresor.model.proxy.endpoint.EndpointConfiguration}.
+	 * It is bidirectional and its opposite is '{@link de.cloudtresor.model.proxy.endpoint.EndpointConfiguration#getService <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Endpoints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Endpoints</em>' reference list.
+	 * @see de.cloudtresor.model.proxy.ProxyPackage#getService_Endpoints()
+	 * @see de.cloudtresor.model.proxy.endpoint.EndpointConfiguration#getService
+	 * @model opposite="service" transient="true" changeable="false"
+	 * @generated
+	 */
+	EList<EndpointConfiguration> getEndpoints();
 
 } // Service

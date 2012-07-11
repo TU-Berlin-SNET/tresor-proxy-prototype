@@ -6,11 +6,10 @@
  */
 package de.cloudtresor.model.proxy.endpoint;
 
+import de.cloudtresor.model.proxy.ConfigurationItem;
 import de.cloudtresor.model.proxy.Service;
 
 import java.net.URL;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface EndpointConfiguration extends EObject {
+public interface EndpointConfiguration extends ConfigurationItem {
 	/**
 	 * Returns the value of the '<em><b>Url</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,6 +57,7 @@ public interface EndpointConfiguration extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Service</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.cloudtresor.model.proxy.Service#getEndpoints <em>Endpoints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Service</em>' reference isn't clear,
@@ -67,7 +67,8 @@ public interface EndpointConfiguration extends EObject {
 	 * @return the value of the '<em>Service</em>' reference.
 	 * @see #setService(Service)
 	 * @see de.cloudtresor.model.proxy.endpoint.EndpointPackage#getEndpointConfiguration_Service()
-	 * @model required="true"
+	 * @see de.cloudtresor.model.proxy.Service#getEndpoints
+	 * @model opposite="endpoints" resolveProxies="false" required="true"
 	 * @generated
 	 */
 	Service getService();

@@ -16,16 +16,18 @@ import de.cloudtresor.model.proxy.endpoint.ClientSSLConfiguration;
 import de.cloudtresor.model.proxy.endpoint.EndpointConfiguration;
 import de.cloudtresor.model.proxy.endpoint.EndpointFactory;
 import de.cloudtresor.model.proxy.endpoint.EndpointPackage;
-import de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint;
-import de.cloudtresor.model.proxy.endpoint.LocalSSLEndpoint;
-import de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpoint;
-import de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpoint;
-import de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpoint;
-import de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpoint;
+import de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.LocalSSLEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpointConfiguration;
 import de.cloudtresor.model.proxy.endpoint.SSLConfiguration;
-import de.cloudtresor.model.proxy.endpoint.SecureEndpoint;
+import de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration;
 import de.cloudtresor.model.proxy.endpoint.ServerSSLConfiguration;
-import de.cloudtresor.model.proxy.endpoint.TSTPEndpoint;
+import de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration;
 
 import de.cloudtresor.model.proxy.impl.ProxyPackageImpl;
 
@@ -50,48 +52,6 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass localHTTPEndpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass localSSLEndpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass localTSTPEndpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass remoteHTTPEndpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass remoteSSLEndpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass remoteTSTPEndpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass endpointConfigurationEClass = null;
 
 	/**
@@ -99,14 +59,70 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass secureEndpointEClass = null;
+	private EClass localEndpointConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tstpEndpointEClass = null;
+	private EClass localHTTPEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass localSSLEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass localTSTPEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass remoteEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass remoteHTTPEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass remoteSSLEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass remoteTSTPEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass secureEndpointConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tstpEndpointConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,69 +219,6 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLocalHTTPEndpoint() {
-		return localHTTPEndpointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLocalHTTPEndpoint_BoundInterfaces() {
-		return (EAttribute)localHTTPEndpointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLocalSSLEndpoint() {
-		return localSSLEndpointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLocalTSTPEndpoint() {
-		return localTSTPEndpointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRemoteHTTPEndpoint() {
-		return remoteHTTPEndpointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRemoteSSLEndpoint() {
-		return remoteSSLEndpointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRemoteTSTPEndpoint() {
-		return remoteTSTPEndpointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEndpointConfiguration() {
 		return endpointConfigurationEClass;
 	}
@@ -293,8 +246,8 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSecureEndpoint() {
-		return secureEndpointEClass;
+	public EClass getLocalEndpointConfiguration() {
+		return localEndpointConfigurationEClass;
 	}
 
 	/**
@@ -302,8 +255,8 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSecureEndpoint_SslConfiguration() {
-		return (EReference)secureEndpointEClass.getEStructuralFeatures().get(0);
+	public EClass getLocalHTTPEndpointConfiguration() {
+		return localHTTPEndpointConfigurationEClass;
 	}
 
 	/**
@@ -311,8 +264,8 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTSTPEndpoint() {
-		return tstpEndpointEClass;
+	public EAttribute getLocalHTTPEndpointConfiguration_BoundInterfaces() {
+		return (EAttribute)localHTTPEndpointConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -320,8 +273,89 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTSTPEndpoint_TstpConfiguration() {
-		return (EReference)tstpEndpointEClass.getEStructuralFeatures().get(0);
+	public EClass getLocalSSLEndpointConfiguration() {
+		return localSSLEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLocalTSTPEndpointConfiguration() {
+		return localTSTPEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRemoteEndpointConfiguration() {
+		return remoteEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRemoteHTTPEndpointConfiguration() {
+		return remoteHTTPEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRemoteSSLEndpointConfiguration() {
+		return remoteSSLEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRemoteTSTPEndpointConfiguration() {
+		return remoteTSTPEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSecureEndpointConfiguration() {
+		return secureEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSecureEndpointConfiguration_SslConfiguration() {
+		return (EReference)secureEndpointConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTSTPEndpointConfiguration() {
+		return tstpEndpointConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTSTPEndpointConfiguration_TstpConfiguration() {
+		return (EReference)tstpEndpointConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -415,28 +449,32 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 		isCreated = true;
 
 		// Create classes and their features
-		localHTTPEndpointEClass = createEClass(LOCAL_HTTP_ENDPOINT);
-		createEAttribute(localHTTPEndpointEClass, LOCAL_HTTP_ENDPOINT__BOUND_INTERFACES);
-
-		localSSLEndpointEClass = createEClass(LOCAL_SSL_ENDPOINT);
-
-		localTSTPEndpointEClass = createEClass(LOCAL_TSTP_ENDPOINT);
-
-		remoteHTTPEndpointEClass = createEClass(REMOTE_HTTP_ENDPOINT);
-
-		remoteSSLEndpointEClass = createEClass(REMOTE_SSL_ENDPOINT);
-
-		remoteTSTPEndpointEClass = createEClass(REMOTE_TSTP_ENDPOINT);
-
 		endpointConfigurationEClass = createEClass(ENDPOINT_CONFIGURATION);
 		createEAttribute(endpointConfigurationEClass, ENDPOINT_CONFIGURATION__URL);
 		createEReference(endpointConfigurationEClass, ENDPOINT_CONFIGURATION__SERVICE);
 
-		secureEndpointEClass = createEClass(SECURE_ENDPOINT);
-		createEReference(secureEndpointEClass, SECURE_ENDPOINT__SSL_CONFIGURATION);
+		localEndpointConfigurationEClass = createEClass(LOCAL_ENDPOINT_CONFIGURATION);
 
-		tstpEndpointEClass = createEClass(TSTP_ENDPOINT);
-		createEReference(tstpEndpointEClass, TSTP_ENDPOINT__TSTP_CONFIGURATION);
+		localHTTPEndpointConfigurationEClass = createEClass(LOCAL_HTTP_ENDPOINT_CONFIGURATION);
+		createEAttribute(localHTTPEndpointConfigurationEClass, LOCAL_HTTP_ENDPOINT_CONFIGURATION__BOUND_INTERFACES);
+
+		localSSLEndpointConfigurationEClass = createEClass(LOCAL_SSL_ENDPOINT_CONFIGURATION);
+
+		localTSTPEndpointConfigurationEClass = createEClass(LOCAL_TSTP_ENDPOINT_CONFIGURATION);
+
+		remoteEndpointConfigurationEClass = createEClass(REMOTE_ENDPOINT_CONFIGURATION);
+
+		remoteHTTPEndpointConfigurationEClass = createEClass(REMOTE_HTTP_ENDPOINT_CONFIGURATION);
+
+		remoteSSLEndpointConfigurationEClass = createEClass(REMOTE_SSL_ENDPOINT_CONFIGURATION);
+
+		remoteTSTPEndpointConfigurationEClass = createEClass(REMOTE_TSTP_ENDPOINT_CONFIGURATION);
+
+		secureEndpointConfigurationEClass = createEClass(SECURE_ENDPOINT_CONFIGURATION);
+		createEReference(secureEndpointConfigurationEClass, SECURE_ENDPOINT_CONFIGURATION__SSL_CONFIGURATION);
+
+		tstpEndpointConfigurationEClass = createEClass(TSTP_ENDPOINT_CONFIGURATION);
+		createEReference(tstpEndpointConfigurationEClass, TSTP_ENDPOINT_CONFIGURATION__TSTP_CONFIGURATION);
 
 		sslConfigurationEClass = createEClass(SSL_CONFIGURATION);
 
@@ -476,72 +514,77 @@ public class EndpointPackageImpl extends EPackageImpl implements EndpointPackage
 		ProxyPackage theProxyPackage = (ProxyPackage)EPackage.Registry.INSTANCE.getEPackage(ProxyPackage.eNS_URI);
 
 		// Create type parameters
-		ETypeParameter secureEndpointEClass_C = addETypeParameter(secureEndpointEClass, "C");
-		ETypeParameter tstpEndpointEClass_C = addETypeParameter(tstpEndpointEClass, "C");
+		ETypeParameter secureEndpointConfigurationEClass_C = addETypeParameter(secureEndpointConfigurationEClass, "C");
+		ETypeParameter tstpEndpointConfigurationEClass_C = addETypeParameter(tstpEndpointConfigurationEClass, "C");
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(this.getSSLConfiguration());
-		secureEndpointEClass_C.getEBounds().add(g1);
+		secureEndpointConfigurationEClass_C.getEBounds().add(g1);
 		g1 = createEGenericType(this.getSSLConfiguration());
-		tstpEndpointEClass_C.getEBounds().add(g1);
+		tstpEndpointConfigurationEClass_C.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		localHTTPEndpointEClass.getESuperTypes().add(theProxyPackage.getConfigurationItem());
-		localHTTPEndpointEClass.getESuperTypes().add(this.getEndpointConfiguration());
-		g1 = createEGenericType(this.getLocalHTTPEndpoint());
-		localSSLEndpointEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getSecureEndpoint());
+		endpointConfigurationEClass.getESuperTypes().add(theProxyPackage.getConfigurationItem());
+		localEndpointConfigurationEClass.getESuperTypes().add(this.getEndpointConfiguration());
+		localHTTPEndpointConfigurationEClass.getESuperTypes().add(this.getLocalEndpointConfiguration());
+		g1 = createEGenericType(this.getLocalHTTPEndpointConfiguration());
+		localSSLEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getSecureEndpointConfiguration());
 		EGenericType g2 = createEGenericType(this.getClientSSLConfiguration());
 		g1.getETypeArguments().add(g2);
-		localSSLEndpointEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getLocalSSLEndpoint());
-		localTSTPEndpointEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getTSTPEndpoint());
+		localSSLEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getLocalSSLEndpointConfiguration());
+		localTSTPEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getTSTPEndpointConfiguration());
 		g2 = createEGenericType(this.getClientSSLConfiguration());
 		g1.getETypeArguments().add(g2);
-		localTSTPEndpointEClass.getEGenericSuperTypes().add(g1);
-		remoteHTTPEndpointEClass.getESuperTypes().add(theProxyPackage.getConfigurationItem());
-		remoteHTTPEndpointEClass.getESuperTypes().add(this.getEndpointConfiguration());
-		g1 = createEGenericType(this.getRemoteHTTPEndpoint());
-		remoteSSLEndpointEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getSecureEndpoint());
+		localTSTPEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		remoteEndpointConfigurationEClass.getESuperTypes().add(this.getEndpointConfiguration());
+		remoteHTTPEndpointConfigurationEClass.getESuperTypes().add(this.getRemoteEndpointConfiguration());
+		g1 = createEGenericType(this.getRemoteHTTPEndpointConfiguration());
+		remoteSSLEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getSecureEndpointConfiguration());
 		g2 = createEGenericType(this.getServerSSLConfiguration());
 		g1.getETypeArguments().add(g2);
-		remoteSSLEndpointEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getLocalSSLEndpoint());
-		remoteTSTPEndpointEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getTSTPEndpoint());
+		remoteSSLEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getLocalSSLEndpointConfiguration());
+		remoteTSTPEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getTSTPEndpointConfiguration());
 		g2 = createEGenericType(this.getServerSSLConfiguration());
 		g1.getETypeArguments().add(g2);
-		remoteTSTPEndpointEClass.getEGenericSuperTypes().add(g1);
+		remoteTSTPEndpointConfigurationEClass.getEGenericSuperTypes().add(g1);
 		clientSSLConfigurationEClass.getESuperTypes().add(this.getSSLConfiguration());
 		serverSSLConfigurationEClass.getESuperTypes().add(this.getSSLConfiguration());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(localHTTPEndpointEClass, LocalHTTPEndpoint.class, "LocalHTTPEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLocalHTTPEndpoint_BoundInterfaces(), ecorePackage.getEString(), "boundInterfaces", null, 0, -1, LocalHTTPEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(localSSLEndpointEClass, LocalSSLEndpoint.class, "LocalSSLEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(localTSTPEndpointEClass, LocalTSTPEndpoint.class, "LocalTSTPEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(remoteHTTPEndpointEClass, RemoteHTTPEndpoint.class, "RemoteHTTPEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(remoteSSLEndpointEClass, RemoteSSLEndpoint.class, "RemoteSSLEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(remoteTSTPEndpointEClass, RemoteTSTPEndpoint.class, "RemoteTSTPEndpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(endpointConfigurationEClass, EndpointConfiguration.class, "EndpointConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEndpointConfiguration_Url(), theProxyPackage.getURL(), "url", null, 1, 1, EndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEndpointConfiguration_Service(), theProxyPackage.getService(), null, "service", null, 1, 1, EndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndpointConfiguration_Service(), theProxyPackage.getService(), theProxyPackage.getService_Endpoints(), "service", null, 1, 1, EndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(secureEndpointEClass, SecureEndpoint.class, "SecureEndpoint", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(secureEndpointEClass_C);
-		initEReference(getSecureEndpoint_SslConfiguration(), g1, null, "sslConfiguration", null, 1, 1, SecureEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(localEndpointConfigurationEClass, LocalEndpointConfiguration.class, "LocalEndpointConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(tstpEndpointEClass, TSTPEndpoint.class, "TSTPEndpoint", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(tstpEndpointEClass_C);
-		initEReference(getTSTPEndpoint_TstpConfiguration(), g1, null, "tstpConfiguration", null, 1, 1, TSTPEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(localHTTPEndpointConfigurationEClass, LocalHTTPEndpointConfiguration.class, "LocalHTTPEndpointConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLocalHTTPEndpointConfiguration_BoundInterfaces(), ecorePackage.getEString(), "boundInterfaces", null, 0, -1, LocalHTTPEndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(localSSLEndpointConfigurationEClass, LocalSSLEndpointConfiguration.class, "LocalSSLEndpointConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(localTSTPEndpointConfigurationEClass, LocalTSTPEndpointConfiguration.class, "LocalTSTPEndpointConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(remoteEndpointConfigurationEClass, RemoteEndpointConfiguration.class, "RemoteEndpointConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(remoteHTTPEndpointConfigurationEClass, RemoteHTTPEndpointConfiguration.class, "RemoteHTTPEndpointConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(remoteSSLEndpointConfigurationEClass, RemoteSSLEndpointConfiguration.class, "RemoteSSLEndpointConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(remoteTSTPEndpointConfigurationEClass, RemoteTSTPEndpointConfiguration.class, "RemoteTSTPEndpointConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(secureEndpointConfigurationEClass, SecureEndpointConfiguration.class, "SecureEndpointConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(secureEndpointConfigurationEClass_C);
+		initEReference(getSecureEndpointConfiguration_SslConfiguration(), g1, null, "sslConfiguration", null, 1, 1, SecureEndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tstpEndpointConfigurationEClass, TSTPEndpointConfiguration.class, "TSTPEndpointConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(tstpEndpointConfigurationEClass_C);
+		initEReference(getTSTPEndpointConfiguration_TstpConfiguration(), g1, null, "tstpConfiguration", null, 1, 1, TSTPEndpointConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sslConfigurationEClass, SSLConfiguration.class, "SSLConfiguration", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

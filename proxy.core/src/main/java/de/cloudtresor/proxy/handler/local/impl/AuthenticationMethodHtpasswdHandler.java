@@ -1,4 +1,4 @@
-package de.cloudtresor.proxy.handler.impl;
+package de.cloudtresor.proxy.handler.local.impl;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.util.HashMap;
@@ -15,8 +14,9 @@ import java.util.Map;
 import org.glassfish.grizzly.http.util.Base64Utils;
 
 import de.cloudtresor.model.proxy.auth.AuthenticationMethodHtpasswd;
+import de.cloudtresor.proxy.handler.local.LocalAuthenticationMethodHandler;
 
-public class AuthenticationMethodHtpasswdHandler extends AuthenticationMethodHandler<AuthenticationMethodHtpasswd> {
+public class AuthenticationMethodHtpasswdHandler extends LocalAuthenticationMethodHandler<AuthenticationMethodHtpasswd> {
 	private static MessageDigest md;
 	
 	static {

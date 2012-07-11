@@ -10,6 +10,9 @@ import de.cloudtresor.model.proxy.ProxyPackage;
 import de.cloudtresor.model.proxy.Service;
 import de.cloudtresor.model.proxy.ServiceConfigurationItem;
 
+import de.cloudtresor.model.proxy.endpoint.EndpointConfiguration;
+import de.cloudtresor.model.proxy.endpoint.EndpointPackage;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -35,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.cloudtresor.model.proxy.impl.ServiceImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.cloudtresor.model.proxy.impl.ServiceImpl#getServiceConfigurationItem <em>Service Configuration Item</em>}</li>
+ *   <li>{@link de.cloudtresor.model.proxy.impl.ServiceImpl#getEndpoints <em>Endpoints</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +75,16 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<ServiceConfigurationItem> serviceConfigurationItem;
+
+	/**
+	 * The cached value of the '{@link #getEndpoints() <em>Endpoints</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEndpoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EndpointConfiguration> endpoints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,11 +143,40 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EndpointConfiguration> getEndpoints() {
+		if (endpoints == null) {
+			endpoints = new EObjectWithInverseResolvingEList<EndpointConfiguration>(EndpointConfiguration.class, this, ProxyPackage.SERVICE__ENDPOINTS, EndpointPackage.ENDPOINT_CONFIGURATION__SERVICE);
+		}
+		return endpoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ProxyPackage.SERVICE__ENDPOINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEndpoints()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
 				return ((InternalEList<?>)getServiceConfigurationItem()).basicRemove(otherEnd, msgs);
+			case ProxyPackage.SERVICE__ENDPOINTS:
+				return ((InternalEList<?>)getEndpoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,6 +193,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 				return getName();
 			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
 				return getServiceConfigurationItem();
+			case ProxyPackage.SERVICE__ENDPOINTS:
+				return getEndpoints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,6 +249,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ProxyPackage.SERVICE__SERVICE_CONFIGURATION_ITEM:
 				return serviceConfigurationItem != null && !serviceConfigurationItem.isEmpty();
+			case ProxyPackage.SERVICE__ENDPOINTS:
+				return endpoints != null && !endpoints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

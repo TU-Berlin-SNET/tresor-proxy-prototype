@@ -74,40 +74,48 @@ public class EndpointAdapterFactory extends AdapterFactoryImpl {
 	protected EndpointSwitch<Adapter> modelSwitch =
 		new EndpointSwitch<Adapter>() {
 			@Override
-			public Adapter caseLocalHTTPEndpoint(LocalHTTPEndpoint object) {
-				return createLocalHTTPEndpointAdapter();
-			}
-			@Override
-			public Adapter caseLocalSSLEndpoint(LocalSSLEndpoint object) {
-				return createLocalSSLEndpointAdapter();
-			}
-			@Override
-			public Adapter caseLocalTSTPEndpoint(LocalTSTPEndpoint object) {
-				return createLocalTSTPEndpointAdapter();
-			}
-			@Override
-			public Adapter caseRemoteHTTPEndpoint(RemoteHTTPEndpoint object) {
-				return createRemoteHTTPEndpointAdapter();
-			}
-			@Override
-			public Adapter caseRemoteSSLEndpoint(RemoteSSLEndpoint object) {
-				return createRemoteSSLEndpointAdapter();
-			}
-			@Override
-			public Adapter caseRemoteTSTPEndpoint(RemoteTSTPEndpoint object) {
-				return createRemoteTSTPEndpointAdapter();
-			}
-			@Override
 			public Adapter caseEndpointConfiguration(EndpointConfiguration object) {
 				return createEndpointConfigurationAdapter();
 			}
 			@Override
-			public <C extends SSLConfiguration> Adapter caseSecureEndpoint(SecureEndpoint<C> object) {
-				return createSecureEndpointAdapter();
+			public Adapter caseLocalEndpointConfiguration(LocalEndpointConfiguration object) {
+				return createLocalEndpointConfigurationAdapter();
 			}
 			@Override
-			public <C extends SSLConfiguration> Adapter caseTSTPEndpoint(TSTPEndpoint<C> object) {
-				return createTSTPEndpointAdapter();
+			public Adapter caseLocalHTTPEndpointConfiguration(LocalHTTPEndpointConfiguration object) {
+				return createLocalHTTPEndpointConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseLocalSSLEndpointConfiguration(LocalSSLEndpointConfiguration object) {
+				return createLocalSSLEndpointConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseLocalTSTPEndpointConfiguration(LocalTSTPEndpointConfiguration object) {
+				return createLocalTSTPEndpointConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseRemoteEndpointConfiguration(RemoteEndpointConfiguration object) {
+				return createRemoteEndpointConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseRemoteHTTPEndpointConfiguration(RemoteHTTPEndpointConfiguration object) {
+				return createRemoteHTTPEndpointConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseRemoteSSLEndpointConfiguration(RemoteSSLEndpointConfiguration object) {
+				return createRemoteSSLEndpointConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseRemoteTSTPEndpointConfiguration(RemoteTSTPEndpointConfiguration object) {
+				return createRemoteTSTPEndpointConfigurationAdapter();
+			}
+			@Override
+			public <C extends SSLConfiguration> Adapter caseSecureEndpointConfiguration(SecureEndpointConfiguration<C> object) {
+				return createSecureEndpointConfigurationAdapter();
+			}
+			@Override
+			public <C extends SSLConfiguration> Adapter caseTSTPEndpointConfiguration(TSTPEndpointConfiguration<C> object) {
+				return createTSTPEndpointConfigurationAdapter();
 			}
 			@Override
 			public Adapter caseSSLConfiguration(SSLConfiguration object) {
@@ -146,90 +154,6 @@ public class EndpointAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint <em>Local HTTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpoint
-	 * @generated
-	 */
-	public Adapter createLocalHTTPEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalSSLEndpoint <em>Local SSL Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalSSLEndpoint
-	 * @generated
-	 */
-	public Adapter createLocalSSLEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpoint <em>Local TSTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpoint
-	 * @generated
-	 */
-	public Adapter createLocalTSTPEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpoint <em>Remote HTTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpoint
-	 * @generated
-	 */
-	public Adapter createRemoteHTTPEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpoint <em>Remote SSL Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpoint
-	 * @generated
-	 */
-	public Adapter createRemoteSSLEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpoint <em>Remote TSTP Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpoint
-	 * @generated
-	 */
-	public Adapter createRemoteTSTPEndpointAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.EndpointConfiguration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -244,30 +168,142 @@ public class EndpointAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpoint <em>Secure Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration <em>Local Endpoint Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpoint
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalEndpointConfiguration
 	 * @generated
 	 */
-	public Adapter createSecureEndpointAdapter() {
+	public Adapter createLocalEndpointConfigurationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpoint <em>TSTP Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration <em>Local HTTP Endpoint Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpoint
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalHTTPEndpointConfiguration
 	 * @generated
 	 */
-	public Adapter createTSTPEndpointAdapter() {
+	public Adapter createLocalHTTPEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalSSLEndpointConfiguration <em>Local SSL Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalSSLEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createLocalSSLEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpointConfiguration <em>Local TSTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.LocalTSTPEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createLocalTSTPEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration <em>Remote Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createRemoteEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpointConfiguration <em>Remote HTTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteHTTPEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createRemoteHTTPEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpointConfiguration <em>Remote SSL Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteSSLEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createRemoteSSLEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpointConfiguration <em>Remote TSTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.RemoteTSTPEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createRemoteTSTPEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration <em>Secure Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.SecureEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createSecureEndpointConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration <em>TSTP Endpoint Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.cloudtresor.model.proxy.endpoint.TSTPEndpointConfiguration
+	 * @generated
+	 */
+	public Adapter createTSTPEndpointConfigurationAdapter() {
 		return null;
 	}
 

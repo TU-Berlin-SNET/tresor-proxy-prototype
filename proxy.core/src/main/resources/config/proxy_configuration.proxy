@@ -8,8 +8,11 @@
       <authorizationConfigurationItems xsi:type="proxyAuth:AuthorizationRequireGroup" pattern="^/admin.*$" groupIdentifier="admins"/>
     </serviceConfigurationItem>
   </services>
-  <configurationItems xsi:type="proxyEndpoint:LocalHTTPEndpoint" url="http://clientproxy.local:9999" service="demo">
+  <configurationItems xsi:type="proxyEndpoint:LocalHTTPEndpointConfiguration" url="http://clientproxy.local:9999" service="demo">
     <boundInterfaces>127.0.0.1</boundInterfaces>
   </configurationItems>
-  <configurationItems xsi:type="proxyEndpoint:RemoteHTTPEndpoint" url="http://tresorproxy.local:9998" service="demo"/>
+  <configurationItems xsi:type="proxyEndpoint:RemoteHTTPEndpointConfiguration" url="http://www.cloud-tresor.de" service="demo"/>
+  <configurationItems xsi:type="proxyEndpoint:LocalSSLEndpointConfiguration" url="http://tresorproxy.local:4433" service="demo">
+    <boundInterfaces>127.0.0.1</boundInterfaces>
+  </configurationItems>
 </cloudtresorproxy:ProxyConfiguration>

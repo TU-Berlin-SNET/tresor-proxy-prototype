@@ -154,13 +154,22 @@ public interface ProxyPackage extends EPackage {
 	int SERVICE__SERVICE_CONFIGURATION_ITEM = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Endpoints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__ENDPOINTS = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_FEATURE_COUNT = IDENTIFIABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}' class.
@@ -296,6 +305,17 @@ public interface ProxyPackage extends EPackage {
 	EReference getService_ServiceConfigurationItem();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.cloudtresor.model.proxy.Service#getEndpoints <em>Endpoints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Endpoints</em>'.
+	 * @see de.cloudtresor.model.proxy.Service#getEndpoints()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_Endpoints();
+
+	/**
 	 * Returns the meta object for class '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,6 +440,14 @@ public interface ProxyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE__SERVICE_CONFIGURATION_ITEM = eINSTANCE.getService_ServiceConfigurationItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Endpoints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__ENDPOINTS = eINSTANCE.getService_Endpoints();
 
 		/**
 		 * The meta object literal for the '{@link de.cloudtresor.model.proxy.ServiceConfigurationItem <em>Service Configuration Item</em>}' class.

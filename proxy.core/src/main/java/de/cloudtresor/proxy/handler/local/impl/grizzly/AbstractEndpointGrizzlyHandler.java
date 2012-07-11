@@ -1,7 +1,6 @@
-package de.cloudtresor.proxy.handler.impl.grizzly;
+package de.cloudtresor.proxy.handler.local.impl.grizzly;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -13,7 +12,6 @@ import java.util.regex.Pattern;
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.grizzly.http.server.Request;
 import org.glassfish.grizzly.http.server.Response;
-import org.glassfish.grizzly.http.util.Base64Utils;
 import org.glassfish.grizzly.http.util.Header;
 import org.glassfish.grizzly.http.util.HttpStatus;
 
@@ -24,7 +22,10 @@ import de.cloudtresor.model.proxy.auth.AuthorizationConfigurationItem;
 import de.cloudtresor.model.proxy.auth.AuthorizationMethod;
 import de.cloudtresor.model.proxy.auth.AuthorizationRequireValidUser;
 import de.cloudtresor.model.proxy.endpoint.EndpointConfiguration;
-import de.cloudtresor.proxy.handler.impl.AuthenticationMethodHandler;
+import de.cloudtresor.model.proxy.endpoint.RemoteEndpointConfiguration;
+import de.cloudtresor.proxy.handler.local.LocalAuthenticationMethodHandler;
+import de.cloudtresor.proxy.handler.remote.RemoteEndpointHandler;
+import de.cloudtresor.proxy.handler.remote.RemoteEndpointHandlerFactory;
 
 abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 	List<AuthenticationMethod> authenticationMethods = new LinkedList<AuthenticationMethod>();
@@ -32,7 +33,9 @@ abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 	AuthorizationConfiguration authorizationConfiguration;
 	
 	Map<Pattern, AuthorizationConfigurationItem> patternMap = new HashMap<Pattern, AuthorizationConfigurationItem>(5);
-	Map<AuthenticationMethod, AuthenticationMethodHandler> authenticationMethodHandlerMap = new HashMap<AuthenticationMethod, AuthenticationMethodHandler>();
+	Map<AuthenticationMethod, LocalAuthenticationMethodHandler> authenticationMethodHandlerMap = new HashMap<AuthenticationMethod, LocalAuthenticationMethodHandler>();
+	
+	RemoteEndpointHandler remoteHandler;
 	
 	EndpointConfiguration configuration;
 	
@@ -55,7 +58,13 @@ abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 		}
 		
 		for(AuthenticationMethod authenticationMethod : authenticationMethods) {
-			authenticationMethodHandlerMap.put(authenticationMethod, AuthenticationMethodHandler.createAuthenticationMethodHandler(authenticationMethod));
+			authenticationMethodHandlerMap.put(authenticationMethod, LocalAuthenticationMethodHandler.createAuthenticationMethodHandler(authenticationMethod));
+		}
+		
+		for(EndpointConfiguration endpointConfiguration : configuration.getService().getEndpoints()) {
+			if(endpointConfiguration instanceof RemoteEndpointConfiguration) {
+				remoteHandler = RemoteEndpointHandlerFactory.INSTANCE.createHandlerForConfiguration((RemoteEndpointConfiguration) endpointConfiguration);
+			}
 		}
 	}
 	
@@ -82,6 +91,17 @@ abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 		return items;
 	}
 	
+	RemoteEndpointConfiguration getRemoteEndpoint() {
+		for(EndpointConfiguration endpoint : configuration.getService().getEndpoints()) {
+			// TODO Multiple endpoints
+			if(endpoint instanceof RemoteEndpointConfiguration) {
+				return (RemoteEndpointConfiguration) endpoint;
+			}
+		}
+		
+		return null;
+	}
+	
 	/**
 	 * Subclasses should implement this, if the requests headers can be trusted
 	 * @return
@@ -90,10 +110,20 @@ abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 		return false;
 	}
 
-	void authorize(final Request request, final Response response) throws Exception {
+	/**
+	 * Authorizes an HTTP request.
+	 * 
+	 * If any one AuthorizationConfigurationItems are not satisfied, a 401 response is
+	 * generated for the client to authenticate itself and false is returned.
+	 * 
+	 * @param request
+	 * @param response
+	 * @throws Exception
+	 */
+	boolean isAuthorized(final Request request, final Response response) {
 		String requestUri = request.getRequestURI();
 		
-		boolean isValid = false;
+		boolean isValid = true;
 		
 		for(AuthorizationConfigurationItem authorizationConfigurationItem : getAuthorizationItems(requestUri)) {
 			if(authorizationConfigurationItem instanceof AuthorizationRequireValidUser) {
@@ -101,12 +131,12 @@ abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 				
 				if(authorizationString == null) {
 					isValid = false;
+
+					break;
 				} else {
-					for(Entry<AuthenticationMethod, AuthenticationMethodHandler> entry : authenticationMethodHandlerMap.entrySet()) {
-						boolean thisIsValid = entry.getValue().isValid(authorizationString);
-						
-						if(thisIsValid) {
-							isValid = true;
+					for(Entry<AuthenticationMethod, LocalAuthenticationMethodHandler> entry : authenticationMethodHandlerMap.entrySet()) {
+						if(!entry.getValue().isValid(authorizationString)) {
+							isValid = false;
 							
 							break;
 						}
@@ -118,8 +148,16 @@ abstract class AbstractEndpointGrizzlyHandler extends HttpHandler {
 		if(!isValid) {
 			response.setStatus(HttpStatus.UNAUTHORIZED_401);
 			response.setHeader(Header.WWWAuthenticate, "Basic realm='TRESOR service " + configuration.getService().getName() + "'");
-			response.getWriter().append("Authentication information not valid!");
+			try {
+				response.getWriter().append("Authentication information not valid!");
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+			
+			return false;
 		}
+		
+		return true;
 	}
 
 	@Override

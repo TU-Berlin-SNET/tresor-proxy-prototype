@@ -1,12 +1,13 @@
-package de.cloudtresor.proxy.handler.impl;
+package de.cloudtresor.proxy.handler.local;
 
 import de.cloudtresor.model.proxy.auth.AuthenticationMethod;
 import de.cloudtresor.model.proxy.auth.AuthenticationMethodHtpasswd;
+import de.cloudtresor.proxy.handler.local.impl.AuthenticationMethodHtpasswdHandler;
 
-public abstract class AuthenticationMethodHandler<T extends AuthenticationMethod> {
+public abstract class LocalAuthenticationMethodHandler<T extends AuthenticationMethod> {
 	T handler;
 	
-	public static AuthenticationMethodHandler createAuthenticationMethodHandler(AuthenticationMethod method) {
+	public static LocalAuthenticationMethodHandler createAuthenticationMethodHandler(AuthenticationMethod method) {
 		if(method instanceof AuthenticationMethodHtpasswd) {
 			return new AuthenticationMethodHtpasswdHandler((AuthenticationMethodHtpasswd) method);
 		}
@@ -14,7 +15,7 @@ public abstract class AuthenticationMethodHandler<T extends AuthenticationMethod
 		return null;
 	}
 	
-	AuthenticationMethodHandler(T handler) {
+	protected LocalAuthenticationMethodHandler(T handler) {
 		this.handler = handler;
 	}
 	
