@@ -6,7 +6,7 @@ import de.cloudtresor.proxy.handler.remote.RemoteEndpointHandlerFactory;
 
 public class RemoteHTTPEndpointHandlerFactoryImpl implements RemoteEndpointHandlerFactory {
 	public RemoteEndpointHandler createHandlerForConfiguration(RemoteEndpointConfiguration configuration) {
-		return new RemoteHTTPEndpointHandler(configuration);
+		return new RemoteHTTPEndpointHandlerImpl(configuration);
 	}
 
 }

@@ -11,8 +11,9 @@ Export-Package: de.cloudtresor.proxy;version="0.0.1";uses:="de.cloudtr
  .glassfish.grizzly.http.server",de.cloudtresor.proxy.handler.remote.i
  mpl;version="0.0.1";uses:="de.cloudtresor.model.proxy.endpoint,de.clo
  udtresor.proxy.handler.remote,org.glassfish.grizzly.filterchain,org.g
- lassfish.grizzly.http.server",de.cloudtresor.proxy.impl;version="0.0.
- 1";uses:="de.cloudtresor.model.proxy,de.cloudtresor.proxy"
+ lassfish.grizzly.http.server,org.glassfish.grizzly.impl",de.cloudtres
+ or.proxy.impl;version="0.0.1";uses:="de.cloudtresor.model.proxy,de.cl
+ oudtresor.proxy"
 Built-By: Mathias Slawik
 Tool: Bundlor 1.1.0.M05
 Bundle-Name: TRESOR Cloud Proxy Services
@@ -30,6 +31,6 @@ Import-Package: de.cloudtresor.model.proxy,de.cloudtresor.model.proxy.
  org.eclipse.emf.ecore.xmi,org.eclipse.emf.ecore.xmi.impl,org.glassfis
  h.grizzly,org.glassfish.grizzly.filterchain,org.glassfish.grizzly.htt
  p,org.glassfish.grizzly.http.server,org.glassfish.grizzly.http.server
- .io,org.glassfish.grizzly.http.util,org.glassfish.grizzly.nio.transpo
- rt,org.glassfish.grizzly.utils
+ .io,org.glassfish.grizzly.http.util,org.glassfish.grizzly.impl,org.gl
+ assfish.grizzly.nio.transport
 

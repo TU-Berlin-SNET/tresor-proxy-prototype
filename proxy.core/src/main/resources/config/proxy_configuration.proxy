@@ -11,8 +11,5 @@
   <configurationItems xsi:type="proxyEndpoint:LocalHTTPEndpointConfiguration" url="http://clientproxy.local:9999" service="demo">
     <boundInterfaces>127.0.0.1</boundInterfaces>
   </configurationItems>
-  <configurationItems xsi:type="proxyEndpoint:RemoteHTTPEndpointConfiguration" url="http://www.cloud-tresor.de" service="demo"/>
-  <configurationItems xsi:type="proxyEndpoint:LocalSSLEndpointConfiguration" url="http://tresorproxy.local:4433" service="demo">
-    <boundInterfaces>127.0.0.1</boundInterfaces>
-  </configurationItems>
+  <configurationItems xsi:type="proxyEndpoint:RemoteHTTPEndpointConfiguration" url="http://localhost" service="demo"/>
 </cloudtresorproxy:ProxyConfiguration>

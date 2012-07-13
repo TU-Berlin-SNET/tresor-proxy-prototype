@@ -1,7 +1,5 @@
 package de.cloudtresor.proxy.handler.remote.impl;
 
-import java.net.InetAddress;
-import java.net.SocketAddress;
 import java.net.URL;
 
 import org.glassfish.grizzly.http.server.Request;
